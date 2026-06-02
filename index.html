@@ -896,7 +896,7 @@
     }
     .mobile-actions { margin-top: 36px; display: flex; flex-direction: column; gap: 12px; }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
   /* =========================================
      АДАПТАЦИЯ ШАПКИ МЕНЮ
   ========================================= */
@@ -904,7 +904,7 @@
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: 15px 20px !important;
+    padding: 10px 15px !important;
     width: 100% !important;
     box-sizing: border-box !important;
     position: relative !important;
@@ -915,25 +915,40 @@
     display: none !important;
   }
   
+  /* Скрываем почту и график работы */
+  .header .email,
+  .header .schedule,
+  .header .working-hours,
+  .header [class*="email"],
+  .header [class*="schedule"],
+  .header [class*="working"] {
+    display: none !important;
+  }
+  
   /* Показываем кнопку мобильного меню */
   .mobile-menu-btn, .burger-menu {
     display: block !important;
     cursor: pointer !important;
   }
 
-  /* Логотип и контакты в шапке (если они съехали) */
+  /* Логотип и контакты в шапке */
   .header .logo {
-    max-width: 150px !important;
+    max-width: 120px !important;
+    height: auto !important;
   }
-  .header .phone, .header .contacts {
-    font-size: 14px !important;
+  
+  .header .phone, 
+  .header .contacts,
+  .header .address {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
   }
 
   /* =========================================
      АДАПТАЦИЯ ГЛАВНОГО ЭКРАНА (HERO)
   ========================================= */
   .hero, section:first-of-type {
-    padding: 100px 20px 50px !important; /* Увеличиваем отступ сверху, чтобы шапка не перекрывала текст */
+    padding: 30px 20px 50px !important; /* УМЕНЬШАЕМ отступ сверху */
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
@@ -943,7 +958,7 @@
   
   /* Заголовок H1 */
   .hero h1, section:first-of-type h1 {
-    font-size: 32px !important;
+    font-size: 28px !important;
     line-height: 1.2 !important;
     margin-bottom: 15px !important;
   }
