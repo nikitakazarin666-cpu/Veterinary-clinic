@@ -898,106 +898,114 @@
 
 @media (max-width: 768px) {
   /* =========================================
-     АДАПТАЦИЯ ШАПКИ МЕНЮ
+     АДАПТАЦИЯ TOPBAR (скрываем почту и график)
   ========================================= */
-  header, .header {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 10px 15px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-  }
-  
-  /* Скрываем десктопные ссылки на мобильном */
-  header nav, .header .nav, .desktop-menu {
+  .topbar-right {
     display: none !important;
-  }
-  
-  /* Скрываем ВСЕ элементы с почтой и графиком работы - более агрессивные селекторы */
-  .header .email,
-  .header .schedule,
-  .header .working-hours,
-  .header .work-time,
-  .header .time,
-  .header p:has(a[href*="mailto"]),
-  .header p:has(a[href^="mailto"]),
-  .header *:has(> a[href*="mailto"]),
-  .header .header__email,
-  .header .header__schedule,
-  .header .header__working-hours,
-  .header [class*="email"],
-  .header [class*="schedule"],
-  .header [class*="working"],
-  .header [class*="time"],
-  .header [class*="mail"],
-  .header [class*="график"],
-  .header [class*="почт"],
-  .header a[href*="mailto"],
-  .header a[href^="mailto"] {
-    display: none !important;
-  }
-  
-  /* Показываем кнопку мобильного меню */
-  .mobile-menu-btn, .burger-menu {
-    display: block !important;
-    cursor: pointer !important;
   }
 
-  /* Логотип и контакты в шапке */
-  .header .logo {
-    max-width: 120px !important;
-    height: auto !important;
+  /* =========================================
+     АДАПТАЦИЯ ШАПКИ МЕНЮ
+  ========================================= */
+  .header {
+    padding: 10px 15px !important;
   }
   
-  .header .phone, 
-  .header .contacts,
-  .header .address {
-    font-size: 13px !important;
-    line-height: 1.3 !important;
+  .nav {
+    height: auto !important;
+    padding: 5px 0 !important;
+  }
+
+  /* Скрываем десктопные ссылки */
+  .nav-links {
+    display: none !important;
+  }
+  
+  /* Скрываем кнопку "Записаться" в шапке (она есть в мобильном меню) */
+  .nav-actions .btn--primary {
+    display: none !important;
+  }
+
+  /* Показываем бургер-меню */
+  .burger {
+    display: flex !important;
+  }
+
+  /* Уменьшаем логотип */
+  .nav-logo-main {
+    font-size: 20px !important;
+  }
+  
+  .nav-logo-sub {
+    font-size: 9px !important;
+  }
+
+  /* Уменьшаем телефон */
+  .nav-phone {
+    font-size: 16px !important;
   }
 
   /* =========================================
      АДАПТАЦИЯ ГЛАВНОГО ЭКРАНА (HERO)
   ========================================= */
-  .hero, section:first-of-type {
-    padding: 8px 20px 50px !important;
+  .hero {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  
+  .hero-left {
+    padding: 40px 20px 50px !important;
     text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
     align-items: center !important;
-    box-sizing: border-box !important;
+  }
+
+  .hero-eyebrow {
+    justify-content: center !important;
   }
   
-  /* Заголовок H1 */
-  .hero h1, section:first-of-type h1 {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 15px !important;
+  .hero h1 {
+    font-size: 36px !important;
+    text-align: center !important;
   }
   
-  /* Описание */
-  .hero p, section:first-of-type p {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 25px !important;
+  .hero-sub {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
-  
-  /* Выравнивание кнопок (одна под другой) */
-  .hero .buttons, .hero .actions, section:first-of-type .btn-group {
-    display: flex !important;
+
+  /* Кнопки одна под другой на всю ширину */
+  .hero-ctas {
     flex-direction: column !important;
     width: 100% !important;
-    gap: 15px !important;
+    align-items: stretch !important;
   }
   
-  /* Сами кнопки растягиваем на 100% ширины экрана */
-  .hero .btn, section:first-of-type button, section:first-of-type a.btn {
+  .hero-ctas .btn {
     width: 100% !important;
-    display: block !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
+    justify-content: center !important;
+  }
+
+  /* Статистика */
+  .hero-stats {
+    justify-content: center !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .hero-stat-num {
+    font-size: 32px !important;
+  }
+
+  /* Правая часть с изображением */
+  .hero-right {
+    height: 300px !important;
+    order: -1 !important; /* Картинка сверху на мобильном */
+  }
+
+  .hero-badge {
+    left: 16px !important;
+    bottom: 20px !important;
   }
 }
     
