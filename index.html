@@ -1,1306 +1,1837 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Здоровье вашего питомца в надёжных руках | Круглосуточная ветеринарная помощь</title>
-    <meta name="description" content="Круглосуточная ветеринарная помощь, диагностика и лечение на месте без боли и стресса для вашего питомца. Запись онлайн.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ВетКлиника «Добрые руки» — Круглосуточная ветеринарная помощь в Москве</title>
+  <meta name="description" content="Круглосуточная ветеринарная клиника в Москве. Экстренный приём 24/7, современная диагностика, опытные врачи. Первичный осмотр бесплатно. Запишитесь онлайн." />
+  <meta name="keywords" content="ветеринарная клиника Москва, ветеринар 24 часа, экстренная помощь животным, лечение животных Москва, ветеринар Москва" />
+  <meta property="og:title" content="ВетКлиника «Добрые руки» — Ветеринарная помощь 24/7 в Москве" />
+  <meta property="og:description" content="Круглосуточная ветеринарная клиника. Современное оборудование, опытные врачи, бесплатный первичный осмотр." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <link rel="canonical" href="https://dobrieruki.ru/" />
 
-        :root {
-            --bg-main:       #f8fafc;
-            --bg-card:       #ffffff;
-            --bg-accent:     #e0f2fe;
-            --primary:       #2563eb;
-            --primary-hover: #1d4ed8;
-            --dark-navy:     #0f172a;
-            --emergency:     #dc2626;
-            --emergency-hov: #b91c1c;
-            --text-dark:     #334155;
-            --text-muted:    #64748b;
-            --success:       #16a34a;
-            --radius-sm:     8px;
-            --radius-md:     16px;
-            --radius-lg:     24px;
-            --radius-pill:   60px;
-            --font-display:  'Montserrat', sans-serif;
-            --font-body:     'Nunito', sans-serif;
-            --shadow-sm:     0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-md:     0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-            --transition:    all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Onest:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
 
-        html { 
-            scroll-behavior: smooth; 
-        }
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
-        body {
-            background-color: var(--bg-main);
-            font-family: var(--font-body);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
-        }
+    :root {
+      --cream:   #F7F3EE;
+      --white:   #FFFFFF;
+      --ink:     #1A1A18;
+      --ink-mid: #3D3D38;
+      --ink-muted: #7A7A72;
+      --sage:    #6B8F71;
+      --sage-light: #A8C5AE;
+      --sage-pale:  #E8F0E9;
+      --terracotta: #C4654A;
+      --terracotta-light: #E8967E;
+      --gold:    #B89B5E;
+      --border:  #DDD8CF;
 
-        /* ── ШАПКА ── */
-        .fixed-header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
-            box-shadow: var(--shadow-sm);
-        }
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 30px;
-            height: 80px;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        .logo-icon {
-            font-size: 28px;
-        }
-        .logo-text {
-            font-family: var(--font-display);
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--dark-navy);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1;
-        }
-        .logo-text span { 
-            color: var(--primary); 
-        }
-        .logo-sub {
-            font-size: 11px;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 2px;
-            display: block;
-        }
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:    'Onest', sans-serif;
+      --font-accent:  'Bebas Neue', sans-serif;
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        .nav-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: var(--transition);
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        /* КНОПКИ */
-        .btn {
-            font-family: var(--font-display);
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-        }
-        .btn-nav-cta {
-            background: var(--primary);
-            color: #fff !important;
-            padding: 12px 24px;
-            border-radius: var(--radius-pill);
-        }
-        .btn-nav-cta:hover { 
-            background: var(--primary-hover);
-            transform: translateY(-1px);
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            padding: 16px 36px;
-        }
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        }
-        .btn-secondary {
-            background: var(--bg-accent);
-            color: var(--primary);
-            padding: 16px 36px;
-        }
-        .btn-secondary:hover {
-            background: rgba(37, 99, 235, 0.15);
-            transform: translateY(-2px);
-        }
-        .btn-emergency-fixed {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--emergency);
-            color: white;
-            padding: 16px 28px;
-            border-radius: var(--radius-pill);
-            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
-            z-index: 999;
-            animation: pulse-red 2s infinite;
-        }
-        .btn-emergency-fixed:hover {
-            background: var(--emergency-hov);
-            transform: scale(1.05);
-        }
+      --radius: 4px;
+      --radius-lg: 12px;
+      --shadow: 0 4px 24px rgba(26,26,24,.08);
+      --shadow-lg: 0 12px 48px rgba(26,26,24,.14);
+    }
 
-        @keyframes pulse-red {
-            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); }
-            70% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
-        }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
 
-        /* Гамбургер */
-        .hamburger {
-            display: none;
-            flex-direction: column; 
-            gap: 6px; 
-            cursor: pointer; 
-            border: none; 
-            background: none;
-        }
-        .hamburger span {
-            display: block;
-            width: 24px; 
-            height: 3px; 
-            background: var(--dark-navy); 
-            border-radius: 2px; 
-            transition: var(--transition);
-        }
-        .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    /* ── Utility ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 96px 0; }
+    .section--tight { padding: 64px 0; }
+    .label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.18; }
+    h1 { font-size: clamp(52px, 7vw, 96px); }
+    h2 { font-size: clamp(36px, 4.5vw, 60px); }
+    h3 { font-size: clamp(22px, 2.5vw, 32px); }
+    p { color: var(--ink-mid); }
 
-        .mobile-nav {
-            display: none;
-            position: fixed; 
-            top: 80px; left: 0; right: 0; bottom: 0;
-            background: #ffffff; 
-            z-index: 999; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center;
-            gap: 24px; 
-            padding: 40px; 
-            opacity: 0; 
-            transform: translateY(-10px); 
-            transition: var(--transition); 
-            pointer-events: none;
-        }
-        .mobile-nav.open { 
-            opacity: 1; 
-            transform: translateY(0); 
-            pointer-events: auto;
-        }
-        .mobile-nav a { 
-            font-family: var(--font-display); 
-            color: var(--dark-navy); 
-            text-decoration: none; 
-            font-weight: 700;
-            font-size: 18px; 
-            text-transform: uppercase; 
-        }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-sans); font-size: 14px; font-weight: 500;
+      letter-spacing: .04em; text-decoration: none;
+      padding: 14px 28px; border-radius: var(--radius);
+      border: none; cursor: pointer; transition: all .25s ease;
+    }
+    .btn--primary {
+      background: var(--ink); color: var(--cream);
+    }
+    .btn--primary:hover { background: var(--sage); }
 
-        /* ── ОБЩИЕ СТИЛИ СЕКЦИЙ ── */
-        .section { 
-            padding: 100px 24px; 
-            position: relative; 
-        }
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            position: relative; 
-        }
-        .section-eyebrow {
-            display: flex;
-            align-items: center; 
-            justify-content: center; 
-            gap: 10px; 
-            margin-bottom: 12px;
-        }
-        .eyebrow-line { 
-            width: 30px; 
-            height: 2px; 
-            background: var(--primary); 
-        }
-        .eyebrow-text { 
-            font-family: var(--font-display); 
-            font-size: 12px; 
-            font-weight: 800;
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            color: var(--primary); 
-        }
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 2.75rem); 
-            font-weight: 800;
-            color: var(--dark-navy);
-            text-align: center; 
-            margin-bottom: 16px; 
-            line-height: 1.2;
-        }
-        .section-title em { 
-            color: var(--primary); 
-            font-style: normal; 
-        }
-        .section-sub {
-            text-align: center;
-            color: var(--text-muted); 
-            max-width: 600px; 
-            margin: 0 auto 60px; 
-            font-size: 16px;
-        }
+    .btn--outline {
+      background: transparent; color: var(--ink);
+      border: 1.5px solid var(--ink);
+    }
+    .btn--outline:hover { background: var(--ink); color: var(--cream); }
 
-        /* Карточки общего типа */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        .base-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            padding: 30px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(0, 0, 0, 0.02);
-            transition: var(--transition);
-        }
-        .base-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
+    .btn--sage {
+      background: var(--sage); color: var(--white);
+    }
+    .btn--sage:hover { background: var(--ink); }
 
-        /* ── 1. ОФЕР (HERO) ── */
-        .hero {
-            padding: 160px 24px 100px;
-            background: linear-gradient(180deg, #e0f2fe 0%, var(--bg-main) 100%);
-        }
-        .hero-inner {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 900;
-            color: var(--dark-navy);
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        .hero-sub {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            color: var(--text-dark);
-            margin-bottom: 35px;
-            font-weight: 500;
-        }
-        .hero-markers {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-        .marker-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-            font-weight: 600;
-            font-size: 15px;
-        }
-        .marker-icon {
-            color: var(--success);
-            font-size: 18px;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .hero-visual {
-            position: relative;
-        }
-        .hero-img-box {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            background: white;
-            aspect-ratio: 4/3;
-        }
-        .hero-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .hero-badge {
-            position: absolute;
-            bottom: -20px;
-            left: -20px;
-            background: var(--dark-navy);
-            color: white;
-            padding: 15px 25px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-        }
+    .btn--ghost {
+      background: transparent; color: var(--cream);
+      border: 1.5px solid rgba(247,243,238,.4);
+    }
+    .btn--ghost:hover { background: rgba(247,243,238,.12); }
 
-        /* ── 2. ПОПАДЕНИЕ В БОЛИ ── */
-        .pain-section { background: #fff; }
-        .pain-card {
-            border-top: 4px solid var(--emergency);
-        }
-        .pain-icon {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--emergency);
-        }
-        .pain-card h3 {
-            font-family: var(--font-display);
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--dark-navy);
-        }
+    .btn--emergency {
+      background: var(--terracotta); color: var(--white);
+      font-weight: 600;
+    }
+    .btn--emergency:hover { background: #b05540; }
 
-        /* ── 3. ОТЛИЧИЯ ПОДХОДА ── */
-        .approach-section { background: var(--bg-main); }
-        .approach-card {
-            border-top: 4px solid var(--primary);
-        }
-        .approach-card h3 {
-            font-family: var(--font-display);
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: var(--dark-navy);
-        }
+    .arrow-icon {
+      width: 16px; height: 16px; transition: transform .25s ease;
+    }
+    .btn:hover .arrow-icon { transform: translateX(4px); }
 
-        /* ── 4. КЛЮЧЕВЫЕ ЦЕННОСТИ ── */
-        .values-section { background: #fff; }
-        .values-layout {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 30px;
-        }
-        .value-example-box {
-            background: var(--bg-accent);
-            border-radius: var(--radius-md);
-            padding: 35px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .value-example-box h4 {
-            font-family: var(--font-display);
-            color: var(--primary);
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-        .value-example-box p {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--dark-navy);
-            font-style: italic;
-        }
+    /* ── Top Bar ── */
+    .topbar {
+      background: var(--ink);
+      padding: 10px 0;
+      font-size: 13px;
+      color: rgba(247,243,238,.75);
+    }
+    .topbar .container {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .topbar a { color: var(--sage-light); text-decoration: none; }
+    .topbar a:hover { color: var(--cream); }
+    .topbar-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--terracotta); color: var(--white);
+      font-size: 11px; font-weight: 600; letter-spacing: .06em;
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .pulse-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--white);
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(1.4); }
+    }
 
-        /* ── 5. ЛЕНТА СЕГОДНЯ В КЛИНИКЕ ── */
-        .feed-section { background: var(--bg-main); }
-        .feed-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
-        .feed-card {
-            background: white;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-        .feed-img {
-            height: 200px;
-            background: #cbd5e1;
-            position: relative;
-        }
-        .feed-img img { width: 100%; height: 100%; object-fit: cover; }
-        .feed-tag {
-            position: absolute;
-            top: 15px; left: 15px;
-            background: var(--primary);
-            color: white;
-            padding: 4px 12px;
-            font-size: 12px;
-            font-weight: 700;
-            border-radius: var(--radius-pill);
-        }
-        .feed-content { padding: 25px; }
-        .feed-content h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 10px; }
+    /* ── Header / Nav ── */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    .header.scrolled { box-shadow: var(--shadow); }
+    .nav {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 72px; gap: 24px;
+    }
+    .nav-logo {
+      display: flex; align-items: baseline; gap: 8px;
+      text-decoration: none;
+    }
+    .nav-logo-main {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 600;
+      color: var(--ink); letter-spacing: -.02em;
+    }
+    .nav-logo-sub {
+      font-family: var(--font-sans);
+      font-size: 11px; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--sage);
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 8px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px; font-weight: 400;
+      color: var(--ink-mid); text-decoration: none;
+      padding: 6px 12px; border-radius: var(--radius);
+      transition: all .2s;
+    }
+    .nav-links a:hover { color: var(--ink); background: var(--sage-pale); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-phone {
+      font-family: var(--font-display);
+      font-size: 20px; font-weight: 600;
+      color: var(--ink); text-decoration: none;
+    }
+    .nav-phone:hover { color: var(--sage); }
+    .burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .burger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--ink); border-radius: 2px;
+      transition: all .3s;
+    }
 
-        /* ── 6. ЛИД-МАГНИТ ── */
-        .magnet-section { background: #fff; padding: 60px 24px; }
-        .magnet-box {
-            background: linear-gradient(90deg, #1e3a8a 0%, #0f172a 100%);
-            border-radius: var(--radius-lg);
-            padding: 50px;
-            color: white;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: center;
-        }
-        .magnet-box h2 { font-family: var(--font-display); font-size: 32px; margin-bottom: 15px; }
-        .magnet-box ul { list-style: none; margin-top: 20px; }
-        .magnet-box li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .magnet-form {
-            background: white;
-            padding: 30px;
-            border-radius: var(--radius-md);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .magnet-form input {
-            padding: 14px;
-            border: 1px solid #cbd5e1;
-            border-radius: var(--radius-sm);
-            font-family: var(--font-body);
-            font-size: 14px;
-        }
+    /* ── Hero ── */
+    .hero {
+      min-height: calc(100vh - 113px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 64px 80px 0;
+      position: relative;
+    }
+    .hero-left::before {
+      content: '';
+      position: absolute; left: -999px; right: 0; top: 0; bottom: 0;
+      background: var(--cream); z-index: -1;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow-line {
+      width: 40px; height: 1px; background: var(--sage);
+    }
+    .hero h1 {
+      margin-bottom: 28px;
+      color: var(--ink);
+    }
+    .hero h1 em {
+      font-style: italic; color: var(--sage);
+    }
+    .hero-sub {
+      font-size: 18px; line-height: 1.6;
+      color: var(--ink-mid); margin-bottom: 40px;
+      max-width: 440px;
+    }
+    .hero-ctas {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .hero-stats {
+      display: flex; gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 42px; font-weight: 600;
+      line-height: 1; color: var(--ink);
+    }
+    .hero-stat-label {
+      font-size: 13px; color: var(--ink-muted);
+      margin-top: 4px;
+    }
+    .hero-right {
+      position: relative; overflow: hidden;
+    }
+    .hero-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(107,143,113,.15) 0%, transparent 60%);
+    }
+    .hero-badge {
+      position: absolute; bottom: 40px; left: -28px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 14px;
+      z-index: 2;
+    }
+    .hero-badge-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--sage-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .hero-badge-text strong {
+      display: block; font-size: 14px; font-weight: 600; color: var(--ink);
+    }
+    .hero-badge-text span {
+      font-size: 12px; color: var(--ink-muted);
+    }
 
-        /* ── 7. КЕЙСЫ И ОТЗЫВЫ ── */
-        .cases-section { background: var(--bg-main); }
-        .case-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-sm);
-        }
-        .case-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        .case-side {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            height: 220px;
-            position: relative;
-        }
-        .case-side img { width: 100%; height: 100%; object-fit: cover; }
-        .case-label {
-            position: absolute; bottom: 10px; left: 10px;
-            background: rgba(0,0,0,0.6); color: white; padding: 4px 10px; font-size: 12px; border-radius: 4px;
-        }
-        .case-body h3 { font-family: var(--font-display); margin-bottom: 15px; color: var(--dark-navy); }
-        .case-comment {
-            background: var(--bg-main);
-            padding: 20px;
-            border-radius: var(--radius-md);
-            margin-top: 20px;
-            font-style: italic;
-            border-left: 4px solid var(--primary);
-        }
+    /* ── Trust strip ── */
+    .trust-strip {
+      background: var(--ink);
+      padding: 20px 0;
+      overflow: hidden;
+    }
+    .trust-inner {
+      display: flex; gap: 60px; align-items: center;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 500;
+      color: rgba(247,243,238,.7);
+      letter-spacing: .04em; flex-shrink: 0;
+    }
+    .trust-item-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--sage-light);
+    }
 
-        /* ── 8. ПРОЦЕСС ЛЕЧЕНИЯ ── */
-        .process-section { background: #fff; }
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        .process-card {
-            position: relative;
-            background: var(--bg-main);
-            padding: 30px;
-            border-radius: var(--radius-md);
-        }
-        .process-num {
-            font-family: var(--font-display);
-            font-size: 36px;
-            font-weight: 900;
-            color: rgba(37, 99, 235, 0.15);
-            position: absolute;
-            top: 15px; right: 20px;
-        }
-        .process-card h3 { font-family: var(--font-display); font-size: 16px; margin-bottom: 10px; margin-top: 15px;}
+    /* ── Pain points ── */
+    .pains-grid {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 2px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 56px;
+    }
+    .pain-card {
+      background: var(--white);
+      padding: 40px;
+      transition: background .25s;
+    }
+    .pain-card:hover { background: var(--sage-pale); }
+    .pain-icon {
+      width: 48px; height: 48px;
+      background: var(--sage-pale);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .pain-icon svg { width: 24px; height: 24px; stroke: var(--sage); fill: none; stroke-width: 1.5; }
+    .pain-card h3 {
+      font-size: 19px; margin-bottom: 10px; color: var(--ink);
+    }
+    .pain-card p { font-size: 14px; line-height: 1.6; }
 
-        /* ── 9. ГАРАНТИЯ КАЧЕСТВА ── */
-        .guarantee-section { background: var(--bg-main); }
+    /* ── Differences / USP ── */
+    .usp-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      margin-top: 64px;
+    }
+    .usp-img-wrap {
+      position: relative; border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .usp-img {
+      width: 100%; aspect-ratio: 4/5;
+      object-fit: cover; display: block;
+    }
+    .usp-img-accent {
+      position: absolute; top: 32px; right: -24px;
+      background: var(--sage);
+      color: var(--white); padding: 20px 24px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .usp-img-accent strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 36px; font-weight: 600; line-height: 1;
+    }
+    .usp-img-accent span { font-size: 12px; opacity: .85; }
+    .usp-list { list-style: none; margin-top: 36px; }
+    .usp-list li {
+      display: flex; gap: 18px;
+      padding: 22px 0; border-bottom: 1px solid var(--border);
+    }
+    .usp-list li:last-child { border-bottom: none; }
+    .usp-num {
+      font-family: var(--font-accent);
+      font-size: 36px; line-height: 1; color: var(--sage-light);
+      flex-shrink: 0; width: 44px;
+    }
+    .usp-list h4 { font-size: 17px; margin-bottom: 4px; color: var(--ink); }
+    .usp-list p { font-size: 14px; }
 
-        /* ── 10. ДОП ЦЕННОСТИ ── */
-        .extra-section { background: #fff; }
+    /* ── Values ── */
+    .values-section { background: var(--ink); color: var(--cream); }
+    .values-section .label { color: var(--sage-light); }
+    .values-section h2 { color: var(--cream); }
+    .values-section p { color: rgba(247,243,238,.7); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px; background: rgba(247,243,238,.08);
+      border: 1px solid rgba(247,243,238,.08);
+      border-radius: var(--radius-lg); overflow: hidden;
+      margin-top: 56px;
+    }
+    .value-card {
+      background: rgba(26,26,24,.8);
+      padding: 40px 32px;
+      transition: background .25s;
+    }
+    .value-card:hover { background: rgba(107,143,113,.15); }
+    .value-num {
+      font-family: var(--font-accent);
+      font-size: 64px; line-height: 1;
+      color: rgba(107,143,113,.3);
+      margin-bottom: 16px; display: block;
+    }
+    .value-card h3 { font-size: 22px; color: var(--cream); margin-bottom: 12px; }
+    .value-case {
+      margin-top: 24px; padding: 16px;
+      background: rgba(107,143,113,.12);
+      border-left: 2px solid var(--sage);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 13px; font-style: italic;
+      color: var(--sage-light);
+    }
 
-        /* ── 11. КОМАНДА ── */
-        .team-section { background: var(--bg-main); }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-        .team-card {
-            background: white;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-        }
-        .team-photo {
-            height: 260px;
-            background: #e2e8f0;
-        }
-        .team-photo img { width: 100%; height: 100%; object-fit: cover; }
-        .team-info { padding: 20px; }
-        .team-info h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 5px; }
-        .team-role { color: var(--primary); font-size: 14px; font-weight: 700; margin-bottom: 8px;}
-        .team-exp { font-size: 12px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+    /* ── Lead Magnet ── */
+    .lead-section {
+      background: var(--sage-pale);
+      border-top: 1px solid var(--sage-light);
+      border-bottom: 1px solid var(--sage-light);
+    }
+    .lead-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .lead-visual {
+      position: relative;
+    }
+    .lead-img {
+      width: 100%; border-radius: var(--radius-lg);
+      aspect-ratio: 4/3; object-fit: cover;
+      display: block;
+    }
+    .lead-tag {
+      position: absolute; top: -16px; left: 24px;
+      background: var(--terracotta);
+      color: var(--white); font-weight: 600;
+      font-size: 13px; letter-spacing: .06em;
+      padding: 8px 16px; border-radius: 20px;
+      text-transform: uppercase;
+    }
+    .lead-checklist { list-style: none; margin: 28px 0 36px; }
+    .lead-checklist li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 15px; color: var(--ink-mid);
+      padding: 8px 0; border-bottom: 1px solid rgba(107,143,113,.2);
+    }
+    .lead-checklist li:last-child { border-bottom: none; }
+    .check-mark {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--sage); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .check-mark svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2.5; }
 
-        /* ── 12. ЗАХОД НА СТОИМОСТЬ ── */
-        .price-section { background: #fff; }
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .price-table tr { border-bottom: 1px solid #e2e8f0; }
-        .price-table td { padding: 18px 10px; font-size: 16px; }
-        .price-table td:last-child { text-align: right; font-weight: 700; color: var(--primary); }
+    /* ── Cases / Testimonials ── */
+    .cases-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 56px;
+    }
+    .case-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .case-img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; display: block;
+    }
+    .case-body { padding: 28px; }
+    .case-badge {
+      display: inline-block;
+      background: var(--sage-pale); color: var(--sage);
+      font-size: 11px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; padding: 4px 10px;
+      border-radius: 20px; margin-bottom: 14px;
+    }
+    .case-body h3 { font-size: 20px; margin-bottom: 10px; }
+    .case-body p { font-size: 14px; margin-bottom: 20px; }
+    .case-review {
+      padding: 16px;
+      background: var(--cream);
+      border-radius: var(--radius);
+      font-size: 13px; font-style: italic;
+      color: var(--ink-mid);
+      border-left: 2px solid var(--sage-light);
+      margin-bottom: 14px;
+    }
+    .case-author {
+      font-size: 12px; font-weight: 600;
+      color: var(--ink-muted); text-transform: uppercase;
+      letter-spacing: .06em;
+    }
 
-        /* ── 13. ФИНАЛЬНЫЙ ПРИЗЫВ ── */
-        .cta-section {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: white;
-            text-align: center;
-        }
-        .cta-section h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 15px;}
-        .cta-form {
-            max-width: 600px;
-            margin: 40px auto 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr auto;
-            gap: 15px;
-        }
-        .cta-form input {
-            padding: 16px;
-            border: none;
-            border-radius: var(--radius-md);
-            font-family: var(--font-body);
-        }
-        .cta-form .btn { background: var(--dark-navy); color: white; padding: 0 30px; }
-        .cta-form .btn:hover { background: #000; }
+    /* ── Process ── */
+    .process-section { background: var(--cream); }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin-top: 64px;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute; top: 36px; left: 60px; right: 60px; height: 1px;
+      background: var(--border); z-index: 0;
+    }
+    .process-step {
+      text-align: center; padding: 0 24px; position: relative; z-index: 1;
+    }
+    .step-circle {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--white); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--font-accent);
+      font-size: 28px; color: var(--sage);
+      box-shadow: var(--shadow);
+      transition: all .25s;
+    }
+    .process-step:hover .step-circle {
+      background: var(--sage); color: var(--white);
+      border-color: var(--sage);
+    }
+    .process-step h4 { font-size: 18px; margin-bottom: 8px; color: var(--ink); }
+    .process-step p { font-size: 13px; }
 
-        /* ── 14. ОНЛАЙН-ДНЕВНИК ПАЦИЕНТА ── */
-        .diary-section { background: var(--bg-main); }
-        .diary-box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        .diary-features { list-style: none; margin-top: 20px; }
-        .diary-features li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    /* ── Quality / Why ── */
+    .quality-layout {
+      display: grid; grid-template-columns: 5fr 4fr;
+      gap: 80px; align-items: center;
+    }
+    .quality-list { margin-top: 36px; list-style: none; }
+    .quality-list li {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 20px 0; border-bottom: 1px solid var(--border);
+    }
+    .quality-list li:last-child { border-bottom: none; }
+    .quality-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--sage-pale);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .quality-icon svg { width: 18px; height: 18px; stroke: var(--sage); fill: none; stroke-width: 1.5; }
+    .quality-list h4 { font-size: 16px; margin-bottom: 4px; color: var(--ink); }
+    .quality-list p { font-size: 14px; }
+    .quality-img-wrap { position: relative; }
+    .quality-img {
+      width: 100%; border-radius: var(--radius-lg);
+      object-fit: cover; aspect-ratio: 3/4;
+    }
+    .quality-cert {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--gold); color: var(--white);
+      border-radius: var(--radius-lg); padding: 24px;
+      text-align: center; box-shadow: var(--shadow-lg);
+      width: 140px;
+    }
+    .quality-cert strong {
+      display: block; font-family: var(--font-display);
+      font-size: 38px; font-weight: 600; line-height: 1;
+    }
+    .quality-cert span { font-size: 12px; opacity: .9; }
 
-        /* ── 16. ПАМЯТКИ ПО УХОДУ ── */
-        .guides-section { background: #fff; }
-        .guide-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .guide-card h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 10px; }
-        .btn-link { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 14px; margin-top: 15px; display: inline-block;}
+    /* ── Services ── */
+    .services-section { background: var(--sage-pale); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 56px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      transition: all .25s;
+      border: 1px solid transparent;
+    }
+    .service-card:hover {
+      border-color: var(--sage-light);
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+    }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--sage-pale);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg { width: 26px; height: 26px; stroke: var(--sage); fill: none; stroke-width: 1.4; }
+    .service-card h3 { font-size: 21px; margin-bottom: 10px; }
+    .service-card p { font-size: 14px; margin-bottom: 20px; }
+    .service-price {
+      font-family: var(--font-display);
+      font-size: 22px; font-weight: 600; color: var(--ink);
+    }
+    .service-price span { font-size: 14px; font-family: var(--font-sans); color: var(--ink-muted); font-weight: 400; }
 
-        /* ── 17. ПРОГРАММА ЛОЯЛЬНОСТИ ── */
-        .loyalty-section { background: var(--bg-main); }
+    /* ── Team ── */
+    .team-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 24px; margin-top: 56px;
+    }
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .25s;
+    }
+    .team-card:hover { transform: translateY(-4px); }
+    .team-img {
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover; display: block;
+    }
+    .team-info { padding: 20px 24px; }
+    .team-info h4 { font-size: 19px; margin-bottom: 4px; color: var(--ink); }
+    .team-info .team-spec {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 8px;
+    }
+    .team-info p { font-size: 13px; }
 
-        /* ── ПОДВАЛ ── */
-        .footer {
-            background: var(--dark-navy);
-            color: #94a3b8;
-            padding: 60px 24px 40px;
-            font-size: 14px;
-        }
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr repeat(2, 1fr);
-            gap: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding-bottom: 40px;
-            margin-bottom: 30px;
-        }
-        .footer-logo { color: white; font-family: var(--font-display); font-size: 20px; font-weight: 800; margin-bottom: 15px; }
-        .footer-col h4 { color: white; font-family: var(--font-display); margin-bottom: 15px; font-size: 14px; text-transform: uppercase; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 10px; }
-        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); }
-        .footer-col a:hover { color: white; }
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    /* ── Pricing ── */
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 56px;
+    }
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius-lg); padding: 40px 36px;
+      border: 1px solid var(--border);
+      transition: all .25s;
+      position: relative;
+    }
+    .pricing-card:hover { box-shadow: var(--shadow-lg); border-color: var(--sage-light); }
+    .pricing-card--featured {
+      background: var(--ink); border-color: var(--ink);
+    }
+    .pricing-card--featured h3,
+    .pricing-card--featured p,
+    .pricing-card--featured .pricing-price { color: var(--cream); }
+    .pricing-card--featured .pricing-item { border-color: rgba(247,243,238,.12); color: rgba(247,243,238,.75); }
+    .pricing-card--featured .pricing-label { color: var(--sage-light); }
+    .pricing-popular {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--terracotta); color: var(--white);
+      font-size: 11px; font-weight: 600; letter-spacing: .08em;
+      padding: 4px 14px; border-radius: 20px; text-transform: uppercase;
+    }
+    .pricing-label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; }
+    .pricing-card h3 { font-size: 26px; margin-bottom: 8px; }
+    .pricing-price {
+      font-family: var(--font-display); font-size: 52px; font-weight: 300;
+      line-height: 1; color: var(--ink); margin: 16px 0 24px;
+    }
+    .pricing-price sup { font-size: 24px; vertical-align: super; }
+    .pricing-price sub { font-size: 18px; color: var(--ink-muted); }
+    .pricing-items { list-style: none; margin-bottom: 32px; }
+    .pricing-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 14px; color: var(--ink-mid);
+      padding: 9px 0; border-bottom: 1px solid var(--border);
+    }
+    .pricing-item:last-child { border-bottom: none; }
+    .pricing-check {
+      color: var(--sage); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
 
-        /* АДАПТИВНОСТЬ */
-        @media (max-width: 1024px) {
-            .hero-inner, .magnet-box, .diary-box, .values-layout { grid-template-columns: 1fr; text-align: center; }
-            .hero-inner { justify-items: center; }
-            .hero-buttons, .hero-markers { justify-content: center; }
-            .marker-item { text-align: left; }
-            .cta-form { grid-template-columns: 1fr; }
-            .case-header { grid-template-columns: 1fr; }
-        }
+    /* ── Loyalty ── */
+    .loyalty-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .loyalty-img {
+      width: 100%; border-radius: var(--radius-lg);
+      aspect-ratio: 4/3; object-fit: cover;
+    }
+    .loyalty-perks {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 36px;
+    }
+    .perk-card {
+      background: var(--sage-pale);
+      border-radius: var(--radius-lg); padding: 24px;
+      border-left: 3px solid var(--sage);
+    }
+    .perk-card strong { display: block; font-size: 15px; color: var(--ink); margin-bottom: 4px; }
+    .perk-card span { font-size: 13px; color: var(--ink-mid); }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-            .section { padding: 60px 16px; }
-            .footer-inner { grid-template-columns: 1fr; gap: 30px; }
-            .btn-emergency-fixed { width: calc(100% - 32px); left: 16px; right: 16px; text-align: center; border-radius: var(--radius-md); bottom: 16px; }
-            body { padding-bottom: 60px; } /* Место под фикс. кнопку на мобилках */
-        }
-    </style>
+    /* ── CTA Final ── */
+    .cta-section {
+      background: var(--ink);
+      position: relative; overflow: hidden;
+    }
+    .cta-bg-text {
+      position: absolute; bottom: -60px; right: -20px;
+      font-family: var(--font-accent);
+      font-size: 240px; line-height: 1;
+      color: rgba(247,243,238,.03);
+      pointer-events: none; user-select: none;
+      white-space: nowrap;
+    }
+    .cta-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .cta-section h2 { color: var(--cream); }
+    .cta-section p { color: rgba(247,243,238,.65); font-size: 18px; margin: 20px 0 36px; }
+    .cta-form {
+      background: var(--white);
+      border-radius: var(--radius-lg); padding: 40px;
+    }
+    .cta-form h3 { font-size: 24px; margin-bottom: 6px; color: var(--ink); }
+    .cta-form .form-sub { font-size: 14px; color: var(--ink-muted); margin-bottom: 28px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: 12px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--ink-muted); margin-bottom: 6px;
+    }
+    .form-group input, .form-group select {
+      width: 100%; padding: 12px 16px;
+      background: var(--cream); border: 1.5px solid var(--border);
+      border-radius: var(--radius); font-family: var(--font-sans);
+      font-size: 15px; color: var(--ink);
+      transition: border-color .2s;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--sage);
+    }
+    .form-note {
+      font-size: 12px; color: var(--ink-muted);
+      margin-top: 12px; text-align: center;
+    }
+    .discount-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(196,101,74,.12); color: var(--terracotta);
+      font-size: 13px; font-weight: 600;
+      padding: 8px 16px; border-radius: 20px;
+      border: 1px solid rgba(196,101,74,.2);
+      margin-bottom: 20px;
+    }
+
+    /* ── Emergency CTA ── */
+    .emergency-strip {
+      background: var(--terracotta);
+      padding: 20px 0;
+    }
+    .emergency-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .emergency-text {
+      display: flex; align-items: center; gap: 16px;
+    }
+    .emergency-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .emergency-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 2; }
+    .emergency-text strong { font-size: 16px; font-weight: 600; color: var(--white); }
+    .emergency-text span { display: block; font-size: 13px; color: rgba(255,255,255,.8); }
+
+    /* ── Footer ── */
+    .footer {
+      background: #141412;
+      color: rgba(247,243,238,.6);
+      padding: 64px 0 32px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo-main { color: var(--cream); }
+    .footer-brand p {
+      font-size: 14px; color: rgba(247,243,238,.5);
+      margin-top: 14px; line-height: 1.7;
+    }
+    .footer-brand .footer-phone {
+      font-family: var(--font-display);
+      font-size: 28px; font-weight: 600;
+      color: var(--cream); text-decoration: none;
+      display: block; margin-top: 20px;
+    }
+    .footer-brand .footer-phone:hover { color: var(--sage-light); }
+    .footer h5 {
+      font-family: var(--font-sans);
+      font-size: 11px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: rgba(247,243,238,.4);
+      margin-bottom: 20px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: 14px; color: rgba(247,243,238,.6);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-bottom {
+      padding-top: 32px; border-top: 1px solid rgba(247,243,238,.08);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: rgba(247,243,238,.35);
+      flex-wrap: wrap; gap: 12px;
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── Sticky emergency button ── */
+    .sticky-call {
+      position: fixed; bottom: 32px; right: 32px;
+      display: flex; gap: 12px; flex-direction: column; align-items: flex-end;
+      z-index: 200;
+    }
+    .sticky-call-btn {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--terracotta); color: var(--white);
+      font-family: var(--font-sans); font-size: 14px; font-weight: 600;
+      padding: 14px 20px; border-radius: 40px;
+      text-decoration: none; box-shadow: 0 8px 24px rgba(196,101,74,.4);
+      transition: all .25s;
+    }
+    .sticky-call-btn:hover { background: #b05540; transform: scale(1.04); }
+    .sticky-call-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── Mobile ── */
+    @media (max-width: 1024px) {
+      .values-grid { grid-template-columns: repeat(2,1fr); }
+      .team-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 860px) {
+      .container { padding: 0 20px; }
+      .section { padding: 64px 0; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 64px 0; }
+      .hero-right { height: 360px; }
+      .hero-badge { left: 16px; }
+      .usp-layout, .lead-layout, .quality-layout,
+      .cta-layout, .loyalty-layout { grid-template-columns: 1fr; gap: 40px; }
+      .pains-grid { grid-template-columns: 1fr; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-steps::before { display: none; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+    }
+    @media (max-width: 560px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+      .topbar .topbar-right { display: none; }
+      .emergency-inner { flex-direction: column; text-align: center; }
+    }
+
+    /* ── Mobile menu ── */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--cream); z-index: 300;
+      flex-direction: column; padding: 24px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-top {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 40px;
+    }
+    .mobile-close {
+      background: none; border: none; cursor: pointer;
+      font-size: 24px; color: var(--ink);
+    }
+    .mobile-links { list-style: none; }
+    .mobile-links li { border-bottom: 1px solid var(--border); }
+    .mobile-links a {
+      display: block; font-size: 22px; padding: 16px 0;
+      font-family: var(--font-display);
+      color: var(--ink); text-decoration: none;
+    }
+    .mobile-actions { margin-top: 36px; display: flex; flex-direction: column; gap: 12px; }
+  </style>
 </head>
 <body>
 
-<!-- 15. ЭКСТРЕННАЯ КНОПКА (ФИКСИРОВАННАЯ КНОПКА ЗВОНКА ДЕЖУРНОМУ ВРАЧУ) -->
-<a href="tel:+79991234567" class="btn btn-emergency-fixed">
-    <span>📞</span> Экстренный вызов дежурного врача
-</a>
+<!-- ── Sticky emergency ── -->
+<div class="sticky-call">
+  <a href="tel:+74951234567" class="sticky-call-btn">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.87 2.88 2 2 0 012.86.7h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.37a16 16 0 006.29 6.29l1.74-1.74a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    Вызвать врача
+  </a>
+</div>
 
-<!-- ХЕДЕР -->
-<header class="fixed-header">
-    <div class="header-inner">
-        <a href="#hero" class="logo">
-            <span class="logo-text">Лапкин<span>.</span></span>
-            <div><span class="logo-sub">Ветеринарный центр</span></div>
-        </a>
-        <nav class="nav-links">
-            <a href="#about">О подходе</a>
-            <a href="#cases">Кейсы</a>
-            <a href="#team">Врачи</a>
-            <a href="#prices">Цены</a>
-            <a href="#appointment" class="btn btn-nav-cta">Записаться на приём</a>
-        </nav>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<!-- ── Mobile menu ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-main">Добрые руки</span>
+    </a>
+    <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  </div>
+  <ul class="mobile-links">
+    <li><a href="#services" onclick="closeMobileMenu()">Услуги</a></li>
+    <li><a href="#team" onclick="closeMobileMenu()">Команда</a></li>
+    <li><a href="#cases" onclick="closeMobileMenu()">Случаи</a></li>
+    <li><a href="#pricing" onclick="closeMobileMenu()">Цены</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">Контакты</a></li>
+  </ul>
+  <div class="mobile-actions">
+    <a href="tel:+74951234567" class="btn btn--emergency">Экстренный звонок</a>
+    <a href="#contact" class="btn btn--primary" onclick="closeMobileMenu()">Записаться</a>
+  </div>
+</div>
+
+<!-- ── Top bar ── -->
+<div class="topbar">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:16px">
+      <span class="topbar-badge">
+        <span class="pulse-dot"></span>
+        Принимаем сейчас
+      </span>
+      <span>Москва, ул. Садовая, 12</span>
     </div>
+    <div class="topbar-right" style="display:flex;gap:20px">
+      <a href="mailto:info@dobrieruki.ru">info@dobrieruki.ru</a>
+      <span>Пн–Вс, 24/7</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Header ── -->
+<header class="header" id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-main">Добрые руки</span>
+        <span class="nav-logo-sub">Ветеринарная клиника</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#cases">Случаи</a></li>
+        <li><a href="#pricing">Цены</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:+74951234567" class="nav-phone">+7 (495) 123-45-67</a>
+        <a href="#contact" class="btn btn--primary" style="padding:10px 20px;font-size:13px">Записаться</a>
+        <button class="burger" onclick="openMobileMenu()" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
 </header>
 
-<!-- МОБИЛЬНОЕ МЕНЮ -->
-<nav class="mobile-nav" id="mobileNav">
-    <a href="#about">О подходе</a>
-    <a href="#cases">Кейсы</a>
-    <a href="#team">Врачи</a>
-    <a href="#prices">Цены</a>
-    <a href="#appointment" class="btn btn-primary" style="margin-top:20px;">Записаться</a>
-</nav>
-
-<!-- 1. ОФЕР -->
-<section class="hero" id="hero">
-    <div class="container hero-inner">
+<!-- ═══════════════════════════════════
+     HERO
+═══════════════════════════════════ -->
+<section class="hero">
+  <div class="container" style="display:contents">
+    <div class="hero-left container">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        <span class="label">Ветеринарная клиника в Москве</span>
+      </div>
+      <h1>Здоровье<br>вашего<br><em>питомца</em> —<br>в надёжных<br>руках</h1>
+      <p class="hero-sub">Круглосуточная помощь, диагностика и лечение на месте. Без очередей, без лишнего стресса для животного.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn--primary">
+          Записаться на приём
+          <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="tel:+74951234567" class="btn btn--outline">
+          Позвонить сейчас
+        </a>
+      </div>
+      <div class="hero-stats">
         <div>
-            <div class="section-eyebrow" style="justify-content: flex-start;">
-                <div class="eyebrow-line"></div>
-                <span class="eyebrow-text">Доверие с первого взгляда</span>
-            </div>
-            <h1>Здоровье вашего питомца — в надёжных руках</h1>
-            <p class="hero-sub">Круглосуточная ветеринарная помощь, диагностика и лечение на месте.</p>
-            <ul class="hero-markers">
-                <li class="marker-item"><span class="marker-icon">✔</span> Экстренный приём 24/7</li>
-                <li class="marker-item"><span class="marker-icon">✔</span> Современное оборудование и собственная лаборатория</li>
-                <li class="marker-item"><span class="marker-icon">✔</span> Лечение без боли и стресса для животного</li>
-            </ul>
-            <div class="hero-buttons">
-                <a href="#appointment" class="btn btn-primary">Записаться онлайн</a>
-                <a href="#prices" class="btn btn-secondary">Прайс-лист</a>
-            </div>
+          <div class="hero-stat-num">14+</div>
+          <div class="hero-stat-label">лет на рынке</div>
         </div>
-        <div class="hero-visual">
-            <div class="hero-img-box">
-                <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80" alt="Ветеринарный врач с собакой">
-            </div>
-            <div class="hero-badge">
-                <strong>Скидка 10%</strong> на первый визит
-            </div>
+        <div>
+          <div class="hero-stat-num">8 000+</div>
+          <div class="hero-stat-label">вылеченных животных</div>
         </div>
+        <div>
+          <div class="hero-stat-num">24/7</div>
+          <div class="hero-stat-label">экстренный приём</div>
+        </div>
+      </div>
     </div>
+    <div class="hero-right">
+      <img src="images/hero-vet-doctor.jpg" alt="Ветеринарный врач с питомцем — добрые руки клиника Москва" class="hero-img" loading="eager" />
+      <div class="hero-img-overlay"></div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B8F71" stroke-width="1.6"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="hero-badge-text">
+          <strong>Бесплатный осмотр</strong>
+          <span>для новых клиентов</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 2. ПОПАДЕНИЕ В БОЛИ -->
-<section class="section pain-section">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Знакомые ситуации?</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Проблемы, с которыми сталкиваются <em>владельцы</em></h2>
-        <div class="card-grid">
-            <div class="base-card pain-card">
-                <div class="pain-icon">🚨</div>
-                <h3>«В экстренной ситуации клиника была закрыта»</h3>
-                <p class="text-muted">Большинство центров работают по графику, но питомцы болеют без расписания.</p>
-            </div>
-            <div class="base-card pain-card">
-                <div class="pain-icon">💔</div>
-                <h3>«Врач был груб или безразличен к животному»</h3>
-                <p class="text-muted">Стресс питомца удваивается, если персонал проявляет равнодушие и жесткость.</p>
-            </div>
-            <div class="base-card pain-card">
-                <div class="pain-icon">🔬</div>
-                <h3>«Пришлось возить на анализы в разные места»</h3>
-                <p class="text-muted">Потеря драгоценного времени на транспортировку между лабораториями города.</p>
-            </div>
-            <div class="base-card pain-card">
-                <div class="pain-icon">💸</div>
-                <h3>«Дорого и без каких-либо гарантий результата»</h3>
-                <p class="text-muted">Непонятные чеки в конце лечения и отсутствие прозрачности в назначениях.</p>
-            </div>
-        </div>
+<!-- ── Trust strip ── -->
+<div class="trust-strip" aria-hidden="true">
+  <div style="overflow:hidden">
+    <div class="trust-inner">
+      <!-- дублируем для бесшовной прокрутки -->
+      <span class="trust-item"><span class="trust-item-dot"></span>Собственная лаборатория</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>УЗИ и рентген на месте</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Стационар 24/7</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Хирурги, терапевты, стоматологи</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Работаем с экзотическими животными</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Чёткая смета до начала лечения</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Выезд врача на дом</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Собственная лаборатория</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>УЗИ и рентген на месте</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Стационар 24/7</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Хирурги, терапевты, стоматологи</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Работаем с экзотическими животными</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Чёткая смета до начала лечения</span>
+      <span class="trust-item"><span class="trust-item-dot"></span>Выезд врача на дом</span>
     </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     БОЛИ
+═══════════════════════════════════ -->
+<section class="section" id="pains">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Мы понимаем ваш опыт</span>
+      <h2 style="margin-top:12px;max-width:520px">Знакомые ситуации?</h2>
+    </div>
+    <div class="pains-grid reveal">
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>В экстренной ситуации клиника была закрыта</h3>
+        <p>Когда животному плохо посреди ночи, каждая минута на счету. Мы принимаем круглосуточно — без исключений.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>Врач был равнодушен к животному</h3>
+        <p>Мы выбираем врачей не только по компетентности, но и по отношению к животным. Наш подход — внимание и забота.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Приходилось возить на анализы в разные места</h3>
+        <p>Собственная лаборатория, УЗИ, рентген и анализы — всё на месте. Результаты в тот же день.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+        </div>
+        <h3>Дорого и без понимания за что</h3>
+        <p>Мы называем точную стоимость до начала лечения. Никаких скрытых платежей и неожиданных счётов.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 3. ОТЛИЧИЯ ПОДХОДА -->
-<section class="section approach-section" id="about">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Наши стандарты</span>
-            <div class="eyebrow-line"></div>
+<!-- ═══════════════════════════════════
+     ОТЛИЧИЯ
+═══════════════════════════════════ -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="usp-layout">
+      <div class="usp-img-wrap reveal">
+        <img src="images/clinic-interior.jpg" alt="Современное оборудование ветеринарной клиники Добрые руки" class="usp-img" loading="lazy" />
+        <div class="usp-img-accent">
+          <strong>20 мин</strong>
+          <span>от поступления<br>до операции</span>
         </div>
-        <h2 class="section-title">Почему выбирают <em>Лапкин</em></h2>
-        <div class="card-grid">
-            <div class="base-card approach-card">
-                <h3>Приём без очередей</h3>
-                <p class="text-muted">Строго по записи или в порядке моментальной экстренности без ожидания.</p>
-            </div>
-            <div class="base-card approach-card">
-                <h3>Все анализы на месте</h3>
-                <p class="text-muted">Собственная лаборатория выдает результаты экспресс-тестов за 15-20 минут.</p>
-            </div>
-            <div class="base-card approach-card">
-                <h3>Узкие специалисты</h3>
-                <p class="text-muted">В штате работают опытные хирурги, терапевты, стоматологи, офтальмологи.</p>
-            </div>
-            <div class="base-card approach-card">
-                <h3>Любые виды животных</h3>
-                <p class="text-muted">Профессионально лечим кошек, собак, грызунов, птиц и экзотических питомцев.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 4. КЛЮЧЕВЫЕ ЦЕННОСТИ -->
-<section class="section values-section">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Что для нас важно</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Наши ключевые <em>ценности</em></h2>
-        <div class="values-layout">
-            <div class="card-grid">
-                <div class="base-card">
-                    <strong>⚡ Быстрая диагностика</strong>
-                    <p class="text-muted" style="margin-top:5px;">Экономия вашего времени и спасение жизней в критических условиях.</p>
-                </div>
-                <div class="base-card">
-                    <strong>🌱 Минимальный стресс</strong>
-                    <p class="text-muted" style="margin-top:5px;">Особый протокол обращения с питомцами для их спокойствия.</p>
-                </div>
-                <div class="base-card">
-                    <strong>📋 Чёткая смета</strong>
-                    <p class="text-muted" style="margin-top:5px;">Согласовываем точную стоимость процедур строго перед началом лечения.</p>
-                </div>
-            </div>
-            <div class="value-example-box">
-                <h4>Реальный пример из практики:</h4>
-                <p>«Собаку с заворотом желудка прооперировали через 20 минут после поступления в клинику — она полностью восстановилась и вернулась домой здоровой уже через 3 дня».</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 5. ЛЕНТА «СЕГОДНЯ В КЛИНИКЕ» -->
-<section class="section feed-section">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Прямой эфир</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Сегодня в <em>клинике</em></h2>
-        <p class="section-sub">Делимся историями и событиями из жизни нашего центра с разрешения владельцев.</p>
-        <div class="feed-grid">
-            <div class="feed-card">
-                <div class="feed-img">
-                    <span class="feed-tag">История спасения</span>
-                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80" alt="Кошка">
-                </div>
-                <div class="feed-content">
-                    <h3>Кот Коржик пошёл на поправку</h3>
-                    <p class="text-muted">Успешно завершили курс сложной терапии. Сняли швы, Коржик чувствует себя прекрасно и возвращается к активной жизни.</p>
-                </div>
-            </div>
-            <div class="feed-card">
-                <div class="feed-img">
-                    <span class="feed-tag">До и После</span>
-                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=400&q=80" alt="Собака">
-                </div>
-                <div class="feed-content">
-                    <h3>Ультразвуковая чистка зубов</h3>
-                    <p class="text-muted">Показали результат санации ротовой полости у шпица Тоби. Избавили от зубного камня и предотвратили потерю коренных зубов.</p>
-                </div>
-            </div>
-            <div class="feed-card">
-                <div class="feed-img">
-                    <span class="feed-tag">Ищем дом</span>
-                    <img src="https://images.unsplash.com/photo-1554693190-383dd5302115?auto=format&fit=crop&w=400&q=80" alt="Щенок">
-                </div>
-                <div class="feed-content">
-                    <h3>Найден щенок в Ленинском р-не</h3>
-                    <p class="text-muted">Малыш прошёл полный осмотр, абсолютно здоров и привит. Сейчас находится в нашем стационаре и очень ждет любящую семью.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 6. ЛИД-МАГНИТ -->
-<section class="section magnet-section">
-    <div class="container">
-        <div class="magnet-box">
+      </div>
+      <div class="reveal">
+        <span class="label">Наш подход</span>
+        <h2 style="margin-top:12px">Чем мы<br>отличаемся</h2>
+        <ul class="usp-list">
+          <li>
+            <span class="usp-num">01</span>
             <div>
-                <h2>Бесплатный первичный осмотр и консультация</h2>
-                <p>Специальное предложение для всех новых клиентов клиники, чтобы вы могли познакомиться с нашими врачами без лишних затрат.</p>
-                <ul>
-                    <li>✔ Взвешивание и точное измерение температуры</li>
-                    <li>✔ Профессиональная консультация по питанию и уходу</li>
-                </ul>
+              <h4>Приём без очередей</h4>
+              <p>Запись онлайн или экстренный приём в порядке срочности — вы не будете ждать в коридоре с больным питомцем.</p>
             </div>
-            <form class="magnet-form">
-                <h3 style="color:var(--dark-navy); font-family:var(--font-display); font-size:16px;">Получить сертификат</h3>
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="tel" placeholder="+7 (999) 000-00-00" required>
-                <button type="submit" class="btn btn-primary" style="font-size:12px;">Активировать предложение</button>
-            </form>
+          </li>
+          <li>
+            <span class="usp-num">02</span>
+            <div>
+              <h4>Все анализы на месте</h4>
+              <p>Собственная лаборатория позволяет получить результаты за 30–60 минут, не покидая клинику.</p>
+            </div>
+          </li>
+          <li>
+            <span class="usp-num">03</span>
+            <div>
+              <h4>Узкие специалисты в штате</h4>
+              <p>Хирурги, терапевты, стоматологи, офтальмологи — квалифицированная помощь без направлений в другие клиники.</p>
+            </div>
+          </li>
+          <li>
+            <span class="usp-num">04</span>
+            <div>
+              <h4>Любые виды животных</h4>
+              <p>Кошки, собаки, грызуны, птицы, рептилии — работаем с домашними и экзотическими животными.</p>
+            </div>
+          </li>
+        </ul>
+        <div style="margin-top:36px">
+          <a href="#contact" class="btn btn--primary">
+            Записаться к специалисту
+            <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- 7. КЕЙСЫ + ОТЗЫВЫ -->
-<section class="section cases-section" id="cases">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Победы над болезнями</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Истории <em>выздоровления</em></h2>
-        <div class="case-card">
-            <div class="case-header">
-                <div class="case-side">
-                    <img src="https://images.unsplash.com/photo-1535268647977-a403b69dde74?auto=format&fit=crop&w=500&q=80" alt="До лечения">
-                    <span class="case-label">До поступления</span>
-                </div>
-                <div class="case-side">
-                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=500&q=80" alt="После лечения">
-                    <span class="case-label">Спустя 2 недели</span>
-                </div>
-            </div>
-            <div class="case-body">
-                <h3>Пациент: Лабрадор Марс (4 года)</h3>
-                <p><strong>История болезни:</strong> Марс поступил с сильной вялостью, отказом от еды и подозрением на инородное тело в ЖКТ после прогулки. На месте провели цифровую рентгенографию, обнаружили плотный резиновый мяч в тонком отделе кишечника. Была проведена экстренная эндоскопическая операция.</p>
-                <div class="case-comment">
-                    <strong>Отзыв владельца:</strong> «Огромное спасибо хирургам клиники Лапкин! Скорость принятия решений просто космическая. Сразу сделали снимки, прооперировали и оставили в стационаре под наблюдением. Марс снова весел и здоров!» — Игорь В.
-                </div>
-            </div>
-        </div>
+<!-- ═══════════════════════════════════
+     ЦЕННОСТИ
+═══════════════════════════════════ -->
+<section class="section values-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="label">Принципы работы</span>
+      <h2 style="margin-top:12px">Что важно<br>для нас</h2>
     </div>
+    <div class="values-grid reveal">
+      <div class="value-card">
+        <span class="value-num">01</span>
+        <h3>Быстрая диагностика</h3>
+        <p>Быстрый диагноз — это спасённые жизни. Оборудование позволяет провести полное обследование за один визит.</p>
+        <div class="value-case">Собаку с заворотом желудка прооперировали через 20 минут после поступления — вернулась домой через 3 дня.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-num">02</span>
+        <h3>Минимум стресса</h3>
+        <p>Используем методы малоинвазивного лечения и анестезиологию последнего поколения.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num">03</span>
+        <h3>Прозрачные цены</h3>
+        <p>Вы получаете чёткую смету перед началом любой процедуры. Ни одной строки без вашего согласия.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num">04</span>
+        <h3>Долгосрочные отношения</h3>
+        <p>Мы ведём историю каждого пациента и напоминаем о профилактических визитах и вакцинации.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 8. ПРОЦЕСС ЛЕЧЕНИЯ -->
+<!-- ═══════════════════════════════════
+     ИЗОБРАЖЕНИЕ — разбивка текста
+═══════════════════════════════════ -->
+<div style="height:480px;overflow:hidden;position:relative">
+  <img src="images/clinic-team-work.jpg" alt="Команда ветеринарной клиники Добрые руки за работой" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy" />
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(26,26,24,.6) 0%,transparent 60%)"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:var(--cream)">
+    <p style="font-family:var(--font-display);font-size:clamp(28px,4vw,52px);font-weight:300;font-style:italic;color:var(--cream);max-width:700px;line-height:1.3">"Каждый питомец заслуживает лучшей медицины"</p>
+    <p style="font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,243,238,.6);margin-top:16px">Команда клиники «Добрые руки»</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     ЛИД-МАГНИТ
+═══════════════════════════════════ -->
+<section class="section lead-section" id="free-visit">
+  <div class="container">
+    <div class="lead-layout">
+      <div class="lead-visual reveal">
+        <span class="lead-tag">Бесплатно</span>
+        <img src="images/free-checkup.jpg" alt="Бесплатный первичный осмотр питомца в клинике Добрые руки" class="lead-img" loading="lazy" />
+      </div>
+      <div class="reveal">
+        <span class="label">Специальное предложение</span>
+        <h2 style="margin-top:12px">Бесплатный первичный осмотр для новых клиентов</h2>
+        <p style="font-size:17px;margin-top:16px">Приведите питомца в первый раз — и вы ничего не заплатите за знакомство с врачом.</p>
+        <ul class="lead-checklist">
+          <li>
+            <span class="check-mark"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4,8 8,3"/></svg></span>
+            Взвешивание и измерение температуры
+          </li>
+          <li>
+            <span class="check-mark"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4,8 8,3"/></svg></span>
+            Внешний осмотр и оценка общего состояния
+          </li>
+          <li>
+            <span class="check-mark"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4,8 8,3"/></svg></span>
+            Индивидуальная консультация по питанию
+          </li>
+          <li>
+            <span class="check-mark"><svg viewBox="0 0 10 10"><polyline points="2,5.5 4,8 8,3"/></svg></span>
+            Рекомендации по уходу и профилактике
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn--sage">
+          Записаться на бесплатный осмотр
+          <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     КЕЙСЫ
+═══════════════════════════════════ -->
+<section class="section" id="cases" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+      <div>
+        <span class="label">Истории пациентов</span>
+        <h2 style="margin-top:12px">Реальные случаи</h2>
+      </div>
+      <a href="#" class="btn btn--outline" style="font-size:13px">Смотреть все истории</a>
+    </div>
+    <div class="cases-grid reveal">
+      <article class="case-card" itemscope itemtype="https://schema.org/Article">
+        <img src="images/case-dog-surgery.jpg" alt="Успешная операция собаки в клинике Добрые руки" class="case-img" loading="lazy" />
+        <div class="case-body">
+          <span class="case-badge">Хирургия</span>
+          <h3 itemprop="name">Заворот желудка у лабрадора</h3>
+          <p>Хозяева привезли Рекса в час ночи в критическом состоянии. Операционная была готова через 15 минут.</p>
+          <div class="case-review">"Мы были в панике. Но врачи сразу взяли ситуацию под контроль — спокойно, профессионально. Рекс жив и здоров!"</div>
+          <div class="case-author">— Анна К., владелица</div>
+        </div>
+      </article>
+      <article class="case-card" itemscope itemtype="https://schema.org/Article">
+        <img src="images/case-cat-recovery.jpg" alt="Выздоровление кошки после лечения в клинике" class="case-img" loading="lazy" />
+        <div class="case-body">
+          <span class="case-badge">Терапия</span>
+          <h3 itemprop="name">Почечная недостаточность у кошки</h3>
+          <p>Мурке 12 лет, диагноз был поставлен на ранней стадии благодаря нашей диагностике. Курс лечения занял 3 недели.</p>
+          <div class="case-review">"Врач объяснил всё доступно, назначил лечение и контролировал каждый шаг. Мурка снова активна!"</div>
+          <div class="case-author">— Светлана М., владелица</div>
+        </div>
+      </article>
+      <article class="case-card" itemscope itemtype="https://schema.org/Article">
+        <img src="images/case-exotic-parrot.jpg" alt="Лечение экзотических животных в клинике Добрые руки" class="case-img" loading="lazy" />
+        <div class="case-body">
+          <span class="case-badge">Экзотика</span>
+          <h3 itemprop="name">Лечение попугая ара</h3>
+          <p>Дефицит витаминов и нарушение оперения. Редкий случай, требующий специалиста по экзотическим птицам.</p>
+          <div class="case-review">"Не думал, что найду врача для попугая. Здесь помогли без лишних вопросов — опытный специалист принял сразу."</div>
+          <div class="case-author">— Дмитрий Р., владелец</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     ПРОЦЕСС
+═══════════════════════════════════ -->
 <section class="section process-section">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Этапы заботы</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Как проходит <em>процесс лечения</em></h2>
-        <div class="process-grid">
-            <div class="process-card">
-                <span class="process-num">01</span>
-                <h3>Запись или экстренный визит</h3>
-                <p class="text-muted">Вы приезжаете сами при острой боли или записываетесь к назначенному времени.</p>
-            </div>
-            <div class="process-card">
-                <span class="process-num">02</span>
-                <h3>Осмотр и диагностика</h3>
-                <p class="text-muted">Врач осматривает пациента, берет экспресс-анализы и ставит точный диагноз.</p>
-            </div>
-            <div class="process-card">
-                <span class="process-num">03</span>
-                <h3>Лечение или операция</h3>
-                <p class="text-muted">Проведение необходимых процедур, терапевтических манипуляций или хирургии.</p>
-            </div>
-            <div class="process-card">
-                <span class="process-num">04</span>
-                <h3>Реабилитация и контроль</h3>
-                <p class="text-muted">Восстановление в комфортном стационаре, памятки домой и контрольные визиты.</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="label">Как это работает</span>
+      <h2 style="margin-top:12px">Путь вашего питомца</h2>
+      <p style="max-width:480px;margin:16px auto 0">Простой процесс, чтобы вам не нужно было думать о логистике — только о питомце.</p>
     </div>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-circle">01</div>
+        <h4>Запись или экстренный визит</h4>
+        <p>Онлайн-запись за 2 минуты или звонок дежурному врачу в любое время.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">02</div>
+        <h4>Осмотр и диагностика</h4>
+        <p>Врач осматривает питомца, при необходимости назначает анализы на месте.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">03</div>
+        <h4>Смета и лечение</h4>
+        <p>Вы получаете чёткую стоимость и план лечения до начала любых процедур.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">04</div>
+        <h4>Реабилитация и контроль</h4>
+        <p>Контрольные визиты, онлайн-дневник пациента и напоминания о прививках.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="reveal">
+      <a href="#contact" class="btn btn--primary">Начать прямо сейчас</a>
+    </div>
+  </div>
 </section>
 
-<!-- 9. ПОЧЕМУ ГАРАНТИРУЕМ КАЧЕСТВО -->
-<section class="section guarantee-section">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Нам доверяют главное</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Почему мы гарантируем <em>качество</em></h2>
-        <div class="card-grid">
-            <div class="base-card">
-                <h4 style="color:var(--primary); font-family:var(--font-display); margin-bottom:10px;">Сертифицированные препараты</h4>
-                <p class="text-muted">Используем исключительно проверенную и оригинальную ветеринарную фармакологию, соблюдая все температурные условия хранения.</p>
-            </div>
-            <div class="base-card">
-                <h4 style="color:var(--primary); font-family:var(--font-display); margin-bottom:10px;">Врачи с опытом 7+ лет</h4>
-                <p class="text-muted">Наши специалисты регулярно проходят международные курсы повышения квалификации и обладают колоссальным клиническим опытом.</p>
-            </div>
-            <div class="base-card">
-                <h4 style="color:var(--primary); font-family:var(--font-display); margin-bottom:10px;">Собственный стационар</h4>
-                <p class="text-muted">Круглосуточный контроль состояния животных в послеоперационный период. Индивидуальные боксы с подогревом и вентиляцией.</p>
-            </div>
-        </div>
+<!-- ═══════════════════════════════════
+     УСЛУГИ
+═══════════════════════════════════ -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Что мы лечим</span>
+      <h2 style="margin-top:12px;max-width:480px">Полный спектр ветеринарных услуг</h2>
     </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Терапия и диагностика</h3>
+        <p>Полное обследование, анализы крови и мочи, УЗИ, рентген — всё в одном месте, в день обращения.</p>
+        <div class="service-price">от 800 ₽ <span>за приём</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Хирургия</h3>
+        <p>Экстренные и плановые операции: стерилизация, удаление опухолей, ортопедия, экстренная помощь.</p>
+        <div class="service-price">от 4 500 ₽ <span>за операцию</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Вакцинация и чипирование</h3>
+        <p>Плановая вакцинация по международным стандартам. Чипирование с регистрацией в базе данных.</p>
+        <div class="service-price">от 1 200 ₽</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <h3>Стоматология</h3>
+        <p>Чистка зубов под анестезией, удаление зубного камня, лечение кариеса и удаление зубов.</p>
+        <div class="service-price">от 2 800 ₽</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Офтальмология</h3>
+        <p>Диагностика и лечение заболеваний глаз: катаракта, конъюнктивит, травмы, врождённые патологии.</p>
+        <div class="service-price">от 1 500 ₽</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Выезд врача на дом</h3>
+        <p>Если питомцу нельзя ехать в клинику — врач приедет к вам. Забор анализов, осмотр, назначение лечения.</p>
+        <div class="service-price">от 2 500 ₽</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="#pricing" class="btn btn--outline">Полный прайс-лист</a>
+    </div>
+  </div>
 </section>
 
-<!-- 10. ДОПОЛНИТЕЛЬНЫЕ ЦЕННОСТИ -->
-<section class="section extra-section">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Комплексный уход</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Дополнительные <em>услуги</em></h2>
-        <div class="card-grid">
-            <div class="base-card">
-                <h3>Выезд врача на дом</h3>
-                <p class="text-muted">Если транспортировка вызывает у животного критический стресс, наш терапевт приедет со всем необходимым для осмотра.</p>
-            </div>
-            <div class="base-card">
-                <h3>Груминг и чистка зубов</h3>
-                <p class="text-muted">Профессиональный гигиенический уход, стрижка колтунов, бережное мытьё и ультразвуковое удаление налета без боли.</p>
-            </div>
-            <div class="base-card">
-                <h3>Чипирование и вакцинация</h3>
-                <p class="text-muted">Официальное внесение в международные базы данных, подготовка документов для выезда за границу и плановые прививки.</p>
-            </div>
-        </div>
+<!-- ═══════════════════════════════════
+     КОМАНДА
+═══════════════════════════════════ -->
+<section class="section" id="team" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+      <div>
+        <span class="label">Наши специалисты</span>
+        <h2 style="margin-top:12px">Врачи, которым<br>можно доверять</h2>
+      </div>
+      <p style="max-width:340px;font-size:15px">Каждый врач прошёл специализированное обучение и работает с животными 7+ лет.</p>
     </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <img src="images/team-doctor-1.jpg" alt="Главный ветеринарный хирург клиники Добрые руки" class="team-img" loading="lazy" />
+        <div class="team-info">
+          <h4>Алексей Морозов</h4>
+          <div class="team-spec">Хирург</div>
+          <p>14 лет практики. Специализация — экстренная хирургия и онкология.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="images/team-doctor-2.jpg" alt="Ветеринарный терапевт клиники Добрые руки" class="team-img" loading="lazy" />
+        <div class="team-info">
+          <h4>Елена Смирнова</h4>
+          <div class="team-spec">Терапевт</div>
+          <p>10 лет опыта. Эксперт по внутренним болезням и эндокринологии.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="images/team-doctor-3.jpg" alt="Ветеринарный стоматолог" class="team-img" loading="lazy" />
+        <div class="team-info">
+          <h4>Марина Волкова</h4>
+          <div class="team-spec">Стоматолог</div>
+          <p>Ведущий специалист по стоматологии животных в Москве.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="images/team-doctor-4.jpg" alt="Ветеринарный офтальмолог" class="team-img" loading="lazy" />
+        <div class="team-info">
+          <h4>Игорь Петров</h4>
+          <div class="team-spec">Офтальмолог</div>
+          <p>9 лет в ветеринарной офтальмологии. Работает с микрохирургией.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 11. КОМАНДА -->
-<section class="section team-section" id="team">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Эксперты клиники</span>
-            <div class="eyebrow-line"></div>
+<!-- ═══════════════════════════════════
+     ГАРАНТИЯ КАЧЕСТВА
+═══════════════════════════════════ -->
+<section class="section" style="background:var(--cream)">
+  <div class="container">
+    <div class="quality-layout">
+      <div class="reveal">
+        <span class="label">Стандарты и гарантии</span>
+        <h2 style="margin-top:12px">Почему мы<br>гарантируем качество</h2>
+        <ul class="quality-list">
+          <li>
+            <div class="quality-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>Сертифицированные препараты</h4>
+              <p>Используем только препараты с международной сертификацией — никаких дженериков без доказательной базы.</p>
+            </div>
+          </li>
+          <li>
+            <div class="quality-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+            </div>
+            <div>
+              <h4>Врачи с опытом 7+ лет</h4>
+              <p>Обязательный минимум стажа для работы в клинике. Регулярное обучение и повышение квалификации.</p>
+            </div>
+          </li>
+          <li>
+            <div class="quality-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h4>Собственный стационар</h4>
+              <p>Послеоперационное наблюдение под постоянным контролем персонала, мониторинг жизненных показателей.</p>
+            </div>
+          </li>
+          <li>
+            <div class="quality-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div>
+              <h4>Онлайн-дневник пациента</h4>
+              <p>Личный кабинет с историей лечения, результатами анализов и уведомлениями о вакцинации.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="quality-img-wrap reveal">
+        <img src="images/quality-lab.jpg" alt="Лаборатория ветеринарной клиники Добрые руки Москва" class="quality-img" loading="lazy" />
+        <div class="quality-cert">
+          <strong>7+</strong>
+          <span>лет опыта у каждого врача</span>
         </div>
-        <h2 class="section-title">Наша <em>команда</em></h2>
-        <p class="section-sub">Профессионалы, которые искренне любят свою работу и бережно относятся к каждому пациенту.</p>
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="team-photo">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80" alt="Врач терапевт">
-                </div>
-                <div class="team-info">
-                    <h3>Елена Козлова</h3>
-                    <div class="team-role">Главный врач, терапевт</div>
-                    <div class="team-exp">Опыт: 12 лет</div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">
-                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80" alt="Врач хирург">
-                </div>
-                <div class="team-info">
-                    <h3>Игорь Смирнов</h3>
-                    <div class="team-role">Ведущий хирург, ортопед</div>
-                    <div class="team-exp">Опыт: 15 лет</div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">
-                    <img src="https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&w=300&q=80" alt="Врач офтальмолог">
-                </div>
-                <div class="team-info">
-                    <h3>Анна Петрова</h3>
-                    <div class="team-role">Офтальмолог, ратолог</div>
-                    <div class="team-exp">Опыт: 8 лет</div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">
-                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=300&q=80" alt="Врач стоматолог">
-                </div>
-                <div class="team-info">
-                    <h3>Дмитрий Иванов</h3>
-                    <div class="team-role">Ветеринарный стоматолог</div>
-                    <div class="team-exp">Опыт: 9 лет</div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- 12. ЗАХОД НА СТОИМОСТЬ -->
-<section class="section price-section" id="prices">
-    <div class="container" style="max-width: 800px;">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Прозрачный прайс-лист</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Стоимость основных <em>услуг</em></h2>
-        <table class="price-table">
-            <tr>
-                <td>Первичный клинический осмотр и консультация</td>
-                <td>800 ₽</td>
-            </tr>
-            <tr>
-                <td>Комплексная вакцинация импортным препаратом</td>
-                <td>от 1 200 ₽</td>
-            </tr>
-            <tr>
-                <td>Ультразвуковое исследование (УЗИ) всех систем органов</td>
-                <td>1 500 ₽</td>
-            </tr>
-            <tr>
-                <td>Стерилизация кошки / Кастрация кота (всё включено)</td>
-                <td>от 2 500 ₽</td>
-            </tr>
-            <tr>
-                <td>Гигиеническая чистка зубов ультразвуком</td>
-                <td>2 000 ₽</td>
-            </tr>
-        </table>
-        <div style="text-align: center; margin-top: 40px;">
-            <p class="text-muted" style="margin-bottom: 20px;">Доступен точный онлайн-калькулятор всех видов операций.</p>
-            <a href="#appointment" class="btn btn-secondary">Рассчитать стоимость</a>
-        </div>
+<!-- ═══════════════════════════════════
+     ЦЕНЫ
+═══════════════════════════════════ -->
+<section class="section" id="pricing" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="label">Прозрачные цены</span>
+      <h2 style="margin-top:12px">Стоимость услуг</h2>
+      <p style="max-width:480px;margin:16px auto 0">Цены указаны за базовый приём. Точная стоимость согласовывается до начала лечения.</p>
     </div>
+    <div class="pricing-grid reveal">
+      <div class="pricing-card">
+        <div class="pricing-label">Базовый</div>
+        <h3>Первичный приём</h3>
+        <p style="font-size:14px;color:var(--ink-muted)">Для знакомства с клиникой</p>
+        <div class="pricing-price"><sup>от</sup>800 <sub>₽</sub></div>
+        <ul class="pricing-items">
+          <li class="pricing-item"><span class="pricing-check">✓</span>Осмотр и консультация</li>
+          <li class="pricing-item"><span class="pricing-check">✓</span>Измерение температуры и веса</li>
+          <li class="pricing-item"><span class="pricing-check">✓</span>Рекомендации по питанию</li>
+          <li class="pricing-item"><span class="pricing-check">✓</span>История болезни в системе</li>
+        </ul>
+        <a href="#contact" class="btn btn--outline" style="width:100%;justify-content:center">Записаться</a>
+      </div>
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-popular">Популярно</div>
+        <div class="pricing-label">Диагностика</div>
+        <h3>Полное обследование</h3>
+        <p style="font-size:14px">Для точного диагноза</p>
+        <div class="pricing-price"><sup>от</sup>3 200 <sub>₽</sub></div>
+        <ul class="pricing-items">
+          <li class="pricing-item"><span class="pricing-check" style="color:var(--sage-light)">✓</span>Осмотр специалиста</li>
+          <li class="pricing-item"><span class="pricing-check" style="color:var(--sage-light)">✓</span>Анализ крови и мочи</li>
+          <li class="pricing-item"><span class="pricing-check" style="color:var(--sage-light)">✓</span>УЗИ внутренних органов</li>
+          <li class="pricing-item"><span class="pricing-check" style="color:var(--sage-light)">✓</span>Рентген (при необходимости)</li>
+          <li class="pricing-item"><span class="pricing-check" style="color:var(--sage-light)">✓</span>Составление плана лечения</li>
+        </ul>
+        <a href="#contact" class="btn btn--sage" style="width:100%;justify-content:center">Записаться</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-label">Программа</div>
+        <h3>Годовое обслуживание</h3>
+        <p style="font-size:14px;color:var(--ink-muted)">Для постоянных клиентов</p>
+        <div class="pricing-price"><sup>от</sup>8 900 <sub>₽/год</sub></div>
+        <ul class="pricing-items">
+          <li class="pricing-item"><span class="pricing-check">✓</span>2 профилактических осмотра</li>
+          <li class="pricing-item"><span class="pricing-check">✓</span>Все вакцинации по плану</li>
+          <li class="pricing-item"><span class="pricing-check">✓</span>Скидка 15% на услуги</li>
+          <li class="pricing-item"><span class="pricing-check">✓</span>Приоритетная запись</li>
+          <li class="pricing-item"><span class="pricing-check">✓</span>Онлайн-консультации</li>
+        </ul>
+        <a href="#contact" class="btn btn--outline" style="width:100%;justify-content:center">Оформить</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 13. ФИНАЛЬНЫЙ ПРИЗЫВ -->
-<section class="section cta-section" id="appointment">
-    <div class="container">
-        <h2>Запишитесь на приём прямо сейчас</h2>
-        <p>Оставьте заявку и получите гарантированную скидку 10% на первый визит в нашу клинику</p>
-        <form class="cta-form">
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="tel" placeholder="+7 (999) 000-00-00" required>
-            <button type="submit" class="btn">Записаться</button>
-        </form>
+<!-- ═══════════════════════════════════
+     ПРОГРАММА ЛОЯЛЬНОСТИ
+═══════════════════════════════════ -->
+<section class="section" style="background:var(--cream)">
+  <div class="container">
+    <div class="loyalty-layout">
+      <div class="reveal">
+        <span class="label">Для постоянных клиентов</span>
+        <h2 style="margin-top:12px">Программа<br>лояльности</h2>
+        <p style="font-size:17px;margin-top:16px;max-width:420px">Мы ценим тех, кто доверяет нам здоровье своего питомца. Поэтому заботимся о вас так же, как о животных.</p>
+        <div class="loyalty-perks">
+          <div class="perk-card">
+            <strong>Скидки до 20%</strong>
+            <span>На повторные визиты и процедуры</span>
+          </div>
+          <div class="perk-card">
+            <strong>Бонусы за рекомендации</strong>
+            <span>Приведи друга — получи баллы</span>
+          </div>
+          <div class="perk-card">
+            <strong>Бесплатный осмотр</strong>
+            <span>Раз в год для постоянных клиентов</span>
+          </div>
+          <div class="perk-card">
+            <strong>Личный кабинет</strong>
+            <span>История, анализы, напоминания</span>
+          </div>
+        </div>
+        <div style="margin-top:32px">
+          <a href="#contact" class="btn btn--primary">
+            Стать участником программы
+            <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="reveal">
+        <img src="images/loyalty-happy-owner.jpg" alt="Довольный владелец питомца после визита в клинику Добрые руки" class="loyalty-img" loading="lazy" />
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- 14. ОНЛАЙН-ДНЕВНИК ПАЦИЕНТА -->
-<section class="section diary-section">
-    <div class="container diary-box">
+<!-- ═══════════════════════════════════
+     ЭКСТРЕННАЯ КНОПКА
+═══════════════════════════════════ -->
+<div class="emergency-strip">
+  <div class="container">
+    <div class="emergency-inner">
+      <div class="emergency-text">
+        <div class="emergency-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.5 19.79 19.79 0 01.87 2.88 2 2 0 012.86.7h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.37a16 16 0 006.54 6.54l1.57-1.57a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
         <div>
-            <div class="section-eyebrow" style="justify-content: flex-start;">
-                <div class="eyebrow-line"></div>
-                <span class="eyebrow-text">Личный кабинет</span>
-            </div>
-            <h2 style="font-family:var(--font-display); font-size:28px; color:var(--dark-navy);">Онлайн-дневник здоровья пациента</h2>
-            <p class="text-muted" style="margin-top:15px;">Удобный цифровой профиль вашего домашнего любимца на нашем сайте. Вся история обращений доступна в один клик с любого устройства.</p>
-            <ul class="diary-features">
-                <li>🔹 Электронная медицинская карта и результаты всех анализов</li>
-                <li>🔹 График плановых вакцинаций и обработок от паразитов</li>
-                <li>🔹 Автоматические напоминания и пуш-уведомления на email</li>
-            </ul>
+          <strong>Экстренная ветеринарная помощь 24/7</strong>
+          <span>Позвоните дежурному врачу прямо сейчас — мы готовы принять вашего питомца</span>
         </div>
-        <div class="base-card" style="border: 2px dashed var(--primary); text-align: center; padding: 40px;">
-            <span style="font-size: 48px;">📱</span>
-            <h3 style="font-family:var(--font-display); margin-top:15px; margin-bottom:10px;">Вход в личный кабинет</h3>
-            <p class="text-muted" style="font-size:14px; margin-bottom:20px;">Авторизация происходит по номеру телефона, указанному в карте питомца.</p>
-            <button class="btn btn-primary" style="width: 100%; font-size:12px;">Войти в кабинет</button>
-        </div>
+      </div>
+      <a href="tel:+74951234567" class="btn" style="background:var(--white);color:var(--terracotta);font-weight:700;flex-shrink:0">
+        +7 (495) 123-45-67
+      </a>
     </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CTA — ЗАПИСЬ
+═══════════════════════════════════ -->
+<section class="section cta-section" id="contact">
+  <div class="cta-bg-text">Добрые руки</div>
+  <div class="container">
+    <div class="cta-layout">
+      <div class="reveal">
+        <span class="label" style="color:var(--sage-light)">Запись на приём</span>
+        <h2 style="margin-top:12px">Не откладывайте<br>здоровье питомца<br>на потом</h2>
+        <p>Запишитесь онлайн прямо сейчас — и получите скидку 10% на первый визит.</p>
+        <div class="discount-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          Скидка 10% для новых клиентов
+        </div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:12px">
+          <div>
+            <div style="font-family:var(--font-display);font-size:36px;color:var(--cream);font-weight:600;line-height:1">Пн–Вс</div>
+            <div style="font-size:13px;color:rgba(247,243,238,.5)">круглосуточно</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:36px;color:var(--cream);font-weight:600;line-height:1">ул. Садовая, 12</div>
+            <div style="font-size:13px;color:rgba(247,243,238,.5)">Москва, м. Новослободская</div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-form reveal">
+        <h3>Записаться на приём</h3>
+        <p class="form-sub">Заполните форму и мы перезвоним в течение 10 минут</p>
+        <div class="form-group">
+          <label>Ваше имя</label>
+          <input type="text" placeholder="Иван Иванов" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <label>Вид животного</label>
+          <select>
+            <option value="">Выберите вид</option>
+            <option>Кошка</option>
+            <option>Собака</option>
+            <option>Грызун</option>
+            <option>Птица</option>
+            <option>Рептилия</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Причина визита</label>
+          <select>
+            <option value="">Выберите услугу</option>
+            <option>Первичный осмотр (бесплатно)</option>
+            <option>Диагностика</option>
+            <option>Хирургия</option>
+            <option>Вакцинация</option>
+            <option>Стоматология</option>
+            <option>Экстренная помощь</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <button class="btn btn--primary" style="width:100%;justify-content:center;padding:15px;font-size:15px" onclick="handleFormSubmit(event)">
+          Записаться со скидкой 10%
+          <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 16. ПАМЯТКИ ПО УХОДУ ЗА ПИТОМЦАМИ -->
-<section class="section guides-section">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Полезные материалы</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Памятки по уходу за <em>любимцами</em></h2>
-        <p class="section-sub">Чек-листы, статьи и экспертные PDF-руководства от ведущих терапевтов клиники. Скачайте бесплатно.</p>
-        <div class="card-grid">
-            <div class="base-card guide-card">
-                <div>
-                    <h3 style="color:var(--dark-navy);">Правильное кормление</h3>
-                    <p class="text-muted">Чек-лист по подбору оптимального рациона, нормы сухого и натурального корма для разных пород.</p>
-                </div>
-                <a href="#" class="btn-link">Скачать PDF (2.4 МБ) →</a>
-            </div>
-            <div class="base-card guide-card">
-                <div>
-                    <h3 style="color:var(--dark-navy);">Календарь прививок</h3>
-                    <p class="text-muted">Подробная памятка по обязательной вакцинации щенков и котят с первого месяца жизни.</p>
-                </div>
-                <a href="#" class="btn-link">Получить на email →</a>
-            </div>
-            <div class="base-card guide-card">
-                <div>
-                    <h3 style="color:var(--dark-navy);">Первая помощь</h3>
-                    <p class="text-muted">Что должно быть в домашней аптечке и как правильно помочь животному до приезда к ветеринару.</p>
-                </div>
-                <a href="#" class="btn-link">Скачать гайд →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 17. ПРОГРАММА ЛОЯЛЬНОСТИ ДЛЯ ВЛАДЕЛЬЦЕВ -->
-<section class="section loyalty-section">
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="eyebrow-line"></div>
-            <span class="eyebrow-text">Забота о постоянных клиентах</span>
-            <div class="eyebrow-line"></div>
-        </div>
-        <h2 class="section-title">Программа <em>лояльности</em></h2>
-        <div class="card-grid">
-            <div class="base-card" style="text-align: center;">
-                <span style="font-size:32px;">🔥</span>
-                <h3 style="font-family:var(--font-display); font-size:18px; margin: 10px 0;">Постоянные скидки</h3>
-                <p class="text-muted">Накопительная система скидок на лечебные процедуры и стационар при повторных визитах в центр.</p>
-            </div>
-            <div class="base-card" style="text-align: center;">
-                <span style="font-size:32px;">🎁</span>
-                <h3 style="font-family:var(--font-display); font-size:18px; margin: 10px 0;">Бонусы за рекомендации</h3>
-                <p class="text-muted">Приводите друзей и получайте бонусные баллы на оплату гигиенических услуг и покупку корма.</p>
-            </div>
-            <div class="base-card" style="text-align: center;">
-                <span style="font-size:32px;">🩺</span>
-                <h3 style="font-family:var(--font-display); font-size:18px; margin: 10px 0;">Бесплатный осмотр</h3>
-                <p class="text-muted">Для всех участников нашей программы лояльности обязательный профилактический осмотр раз в год — бесплатно.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ПОДВАЛ -->
-<footer class="footer">
-    <div class="footer-inner">
-        <div>
-            <div class="footer-logo">Лапкин.</div>
-            <p>Круглосуточный многопрофильный ветеринарный центр. Профессиональная забота, диагностика и терапия в любой сложной ситуации.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Информация</h4>
-            <ul>
-                <li><a href="#about">О подходе</a></li>
-                <li><a href="#cases">Кейсы</a></li>
-                <li><a href="#team">Наши врачи</a></li>
-                <li><a href="#prices">Прайс-лист</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Контакты</h4>
-            <p>📍 г. Москва, ул. Центральная, д. 12</p>
-            <p>📞 +7 (495) 000-00-00 (Многоканальный)</p>
-            <p>📧 info@lapkin-clinic.ru</p>
-        </div>
+<!-- ═══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer class="footer" itemscope itemtype="https://schema.org/VeterinaryCare">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">
+          <span class="nav-logo-main">Добрые руки</span>
+          <span class="nav-logo-sub" style="color:rgba(247,243,238,.3)">Ветеринарная клиника</span>
+        </a>
+        <p itemprop="description">Круглосуточная ветеринарная клиника в Москве. Экстренный приём, диагностика и лечение животных любых видов.</p>
+        <a href="tel:+74951234567" class="footer-phone" itemprop="telephone">+7 (495) 123-45-67</a>
+        <p style="font-size:13px;margin-top:8px;color:rgba(247,243,238,.4)" itemprop="address">ул. Садовая, 12, Москва</p>
+      </div>
+      <div>
+        <h5>Услуги</h5>
+        <ul class="footer-links">
+          <li><a href="#services">Терапия и диагностика</a></li>
+          <li><a href="#services">Хирургия</a></li>
+          <li><a href="#services">Вакцинация</a></li>
+          <li><a href="#services">Стоматология</a></li>
+          <li><a href="#services">Офтальмология</a></li>
+          <li><a href="#services">Выезд на дом</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Клиника</h5>
+        <ul class="footer-links">
+          <li><a href="#team">Наши врачи</a></li>
+          <li><a href="#cases">Истории пациентов</a></li>
+          <li><a href="#pricing">Цены</a></li>
+          <li><a href="#">Лицензии</a></li>
+          <li><a href="#">Оборудование</a></li>
+          <li><a href="#">О клинике</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Пациентам</h5>
+        <ul class="footer-links">
+          <li><a href="#free-visit">Бесплатный осмотр</a></li>
+          <li><a href="#">Личный кабинет</a></li>
+          <li><a href="#">Памятки по уходу</a></li>
+          <li><a href="#">Программа лояльности</a></li>
+          <li><a href="#">Онлайн-запись</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2026 Ветеринарный центр «Лапкин». Все права защищены.</p>
-        <p style="font-size:12px; color:rgba(255,255,255,0.2);">Разработка и маркетинговая оптимизация каталога — Bot Site PRO (BSP).</p>
+      <span>© 2025 Ветеринарная клиника «Добрые руки». Все права защищены.</span>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <a href="#" style="color:rgba(247,243,238,.35);text-decoration:none">Политика конфиденциальности</a>
+        <a href="#" style="color:rgba(247,243,238,.35);text-decoration:none">Лицензия</a>
+        <a href="#" style="color:rgba(247,243,238,.35);text-decoration:none">Карта сайта</a>
+      </div>
     </div>
+  </div>
 </footer>
 
-<script>
-    // Мобильное меню (Гамбургер)
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        mobileNav.classList.toggle('open');
-    });
-
-    mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('open');
-            mobileNav.classList.remove('open');
-        });
-    });
-
-    // Обработка отправки тестовых форм
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Спасибо за вашу заявку! Менеджер клиники свяжется с вами в течение 5 минут для подтверждения записи.');
-            form.reset();
-        });
-    });
+<!-- ── Schema.org structured data ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "Ветеринарная клиника «Добрые руки»",
+  "url": "https://dobrieruki.ru",
+  "telephone": "+74951234567",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Садовая, 12",
+    "addressLocality": "Москва",
+    "addressCountry": "RU"
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "description": "Круглосуточная ветеринарная клиника в Москве. Экстренный приём 24/7, диагностика, хирургия, стационар.",
+  "priceRange": "от 800 ₽"
+}
 </script>
+
+<script>
+  // ── Sticky header ──
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Scroll reveal ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ── Mobile menu ──
+  function openMobileMenu() {
+    document.getElementById('mobileMenu').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── Phone mask ──
+  document.querySelectorAll('input[type="tel"]').forEach(inp => {
+    inp.addEventListener('input', function() {
+      let v = this.value.replace(/\D/g, '');
+      if (v.startsWith('7') || v.startsWith('8')) v = v.slice(1);
+      let res = '+7 ';
+      if (v.length > 0) res += '(' + v.slice(0,3);
+      if (v.length >= 3) res += ') ' + v.slice(3,6);
+      if (v.length >= 6) res += '-' + v.slice(6,8);
+      if (v.length >= 8) res += '-' + v.slice(8,10);
+      this.value = res;
+    });
+  });
+
+  // ── Form submit ──
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const btn = e.currentTarget;
+    btn.textContent = 'Отправляем...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Заявка отправлена! Перезвоним через 10 минут';
+      btn.style.background = 'var(--sage)';
+    }, 1200);
+  }
+
+  // ── Smooth anchor scroll ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
