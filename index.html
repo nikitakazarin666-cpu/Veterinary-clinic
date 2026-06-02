@@ -915,13 +915,27 @@
     display: none !important;
   }
   
-  /* Скрываем почту и график работы */
+  /* Скрываем ВСЕ элементы с почтой и графиком работы - более агрессивные селекторы */
   .header .email,
   .header .schedule,
   .header .working-hours,
+  .header .work-time,
+  .header .time,
+  .header p:has(a[href*="mailto"]),
+  .header p:has(a[href^="mailto"]),
+  .header *:has(> a[href*="mailto"]),
+  .header .header__email,
+  .header .header__schedule,
+  .header .header__working-hours,
   .header [class*="email"],
   .header [class*="schedule"],
-  .header [class*="working"] {
+  .header [class*="working"],
+  .header [class*="time"],
+  .header [class*="mail"],
+  .header [class*="график"],
+  .header [class*="почт"],
+  .header a[href*="mailto"],
+  .header a[href^="mailto"] {
     display: none !important;
   }
   
@@ -948,7 +962,7 @@
      АДАПТАЦИЯ ГЛАВНОГО ЭКРАНА (HERO)
   ========================================= */
   .hero, section:first-of-type {
-    padding: 10px 20px 50px !important; /* УМЕНЬШАЕМ отступ сверху */
+    padding: 8px 20px 50px !important;
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
