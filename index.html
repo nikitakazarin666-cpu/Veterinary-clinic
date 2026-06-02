@@ -895,6 +895,83 @@
       color: var(--ink); text-decoration: none;
     }
     .mobile-actions { margin-top: 36px; display: flex; flex-direction: column; gap: 12px; }
+
+    @media (max-width: 768px) {
+  /* =========================================
+     АДАПТАЦИЯ ШАПКИ МЕНЮ
+  ========================================= */
+  header, .header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+  
+  /* Скрываем десктопные ссылки на мобильном */
+  header nav, .header .nav, .desktop-menu {
+    display: none !important;
+  }
+  
+  /* Показываем кнопку мобильного меню */
+  .mobile-menu-btn, .burger-menu {
+    display: block !important;
+    cursor: pointer !important;
+  }
+
+  /* Логотип и контакты в шапке (если они съехали) */
+  .header .logo {
+    max-width: 150px !important;
+  }
+  .header .phone, .header .contacts {
+    font-size: 14px !important;
+  }
+
+  /* =========================================
+     АДАПТАЦИЯ ГЛАВНОГО ЭКРАНА (HERO)
+  ========================================= */
+  .hero, section:first-of-type {
+    padding: 100px 20px 50px !important; /* Увеличиваем отступ сверху, чтобы шапка не перекрывала текст */
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Заголовок H1 */
+  .hero h1, section:first-of-type h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Описание */
+  .hero p, section:first-of-type p {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 25px !important;
+  }
+  
+  /* Выравнивание кнопок (одна под другой) */
+  .hero .buttons, .hero .actions, section:first-of-type .btn-group {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 15px !important;
+  }
+  
+  /* Сами кнопки растягиваем на 100% ширины экрана */
+  .hero .btn, section:first-of-type button, section:first-of-type a.btn {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+}
+    
   </style>
 </head>
 <body>
