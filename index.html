@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Здоровье вашего питомца в надёжных руках | Круглосуточная ветеринарная помощь</title>
+    <meta name="description" content="Круглосуточная ветеринарная помощь, диагностика и лечение на месте без боли и стресса для вашего питомца. Запись онлайн.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        :root {
+            --bg-main:       #f8fafc;
+            --bg-card:       #ffffff;
+            --bg-accent:     #e0f2fe;
+            --primary:       #2563eb;
+            --primary-hover: #1d4ed8;
+            --dark-navy:     #0f172a;
+            --emergency:     #dc2626;
+            --emergency-hov: #b91c1c;
+            --text-dark:     #334155;
+            --text-muted:    #64748b;
+            --success:       #16a34a;
+            --radius-sm:     8px;
+            --radius-md:     16px;
+            --radius-lg:     24px;
+            --radius-pill:   60px;
+            --font-display:  'Montserrat', sans-serif;
+            --font-body:     'Nunito', sans-serif;
+            --shadow-sm:     0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-md:     0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            --transition:    all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+        }
+
+        body {
+            background-color: var(--bg-main);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        /* ── ШАПКА ── */
+        .fixed-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+            box-shadow: var(--shadow-sm);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 30px;
+            height: 80px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-icon {
+            font-size: 28px;
+        }
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+        .logo-text span { 
+            color: var(--primary); 
+        }
+        .logo-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* КНОПКИ */
+        .btn {
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+        .btn-nav-cta {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 12px 24px;
+            border-radius: var(--radius-pill);
+        }
+        .btn-nav-cta:hover { 
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 16px 36px;
+        }
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+        .btn-secondary {
+            background: var(--bg-accent);
+            color: var(--primary);
+            padding: 16px 36px;
+        }
+        .btn-secondary:hover {
+            background: rgba(37, 99, 235, 0.15);
+            transform: translateY(-2px);
+        }
+        .btn-emergency-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--emergency);
+            color: white;
+            padding: 16px 28px;
+            border-radius: var(--radius-pill);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+            z-index: 999;
+            animation: pulse-red 2s infinite;
+        }
+        .btn-emergency-fixed:hover {
+            background: var(--emergency-hov);
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+
+        /* Гамбургер */
+        .hamburger {
+            display: none;
+            flex-direction: column; 
+            gap: 6px; 
+            cursor: pointer; 
+            border: none; 
+            background: none;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px; 
+            height: 3px; 
+            background: var(--dark-navy); 
+            border-radius: 2px; 
+            transition: var(--transition);
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+        .mobile-nav {
+            display: none;
+            position: fixed; 
+            top: 80px; left: 0; right: 0; bottom: 0;
+            background: #ffffff; 
+            z-index: 999; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+            gap: 24px; 
+            padding: 40px; 
+            opacity: 0; 
+            transform: translateY(-10px); 
+            transition: var(--transition); 
+            pointer-events: none;
+        }
+        .mobile-nav.open { 
+            opacity: 1; 
+            transform: translateY(0); 
+            pointer-events: auto;
+        }
+        .mobile-nav a { 
+            font-family: var(--font-display); 
+            color: var(--dark-navy); 
+            text-decoration: none; 
+            font-weight: 700;
+            font-size: 18px; 
+            text-transform: uppercase; 
+        }
+
+        /* ── ОБЩИЕ СТИЛИ СЕКЦИЙ ── */
+        .section { 
+            padding: 100px 24px; 
+            position: relative; 
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            position: relative; 
+        }
+        .section-eyebrow {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-bottom: 12px;
+        }
+        .eyebrow-line { 
+            width: 30px; 
+            height: 2px; 
+            background: var(--primary); 
+        }
+        .eyebrow-text { 
+            font-family: var(--font-display); 
+            font-size: 12px; 
+            font-weight: 800;
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            color: var(--primary); 
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem); 
+            font-weight: 800;
+            color: var(--dark-navy);
+            text-align: center; 
+            margin-bottom: 16px; 
+            line-height: 1.2;
+        }
+        .section-title em { 
+            color: var(--primary); 
+            font-style: normal; 
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted); 
+            max-width: 600px; 
+            margin: 0 auto 60px; 
+            font-size: 16px;
+        }
+
+        /* Карточки общего типа */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .base-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+        }
+        .base-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ── 1. ОФЕР (HERO) ── */
+        .hero {
+            padding: 160px 24px 100px;
+            background: linear-gradient(180deg, #e0f2fe 0%, var(--bg-main) 100%);
+        }
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 900;
+            color: var(--dark-navy);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero-sub {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-dark);
+            margin-bottom: 35px;
+            font-weight: 500;
+        }
+        .hero-markers {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        .marker-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .marker-icon {
+            color: var(--success);
+            font-size: 18px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .hero-visual {
+            position: relative;
+        }
+        .hero-img-box {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: white;
+            aspect-ratio: 4/3;
+        }
+        .hero-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--dark-navy);
+            color: white;
+            padding: 15px 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ── 2. ПОПАДЕНИЕ В БОЛИ ── */
+        .pain-section { background: #fff; }
+        .pain-card {
+            border-top: 4px solid var(--emergency);
+        }
+        .pain-icon {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--emergency);
+        }
+        .pain-card h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-navy);
+        }
+
+        /* ── 3. ОТЛИЧИЯ ПОДХОДА ── */
+        .approach-section { background: var(--bg-main); }
+        .approach-card {
+            border-top: 4px solid var(--primary);
+        }
+        .approach-card h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--dark-navy);
+        }
+
+        /* ── 4. КЛЮЧЕВЫЕ ЦЕННОСТИ ── */
+        .values-section { background: #fff; }
+        .values-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+        }
+        .value-example-box {
+            background: var(--bg-accent);
+            border-radius: var(--radius-md);
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .value-example-box h4 {
+            font-family: var(--font-display);
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .value-example-box p {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            font-style: italic;
+        }
+
+        /* ── 5. ЛЕНТА СЕГОДНЯ В КЛИНИКЕ ── */
+        .feed-section { background: var(--bg-main); }
+        .feed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .feed-card {
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .feed-img {
+            height: 200px;
+            background: #cbd5e1;
+            position: relative;
+        }
+        .feed-img img { width: 100%; height: 100%; object-fit: cover; }
+        .feed-tag {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: var(--radius-pill);
+        }
+        .feed-content { padding: 25px; }
+        .feed-content h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 10px; }
+
+        /* ── 6. ЛИД-МАГНИТ ── */
+        .magnet-section { background: #fff; padding: 60px 24px; }
+        .magnet-box {
+            background: linear-gradient(90deg, #1e3a8a 0%, #0f172a 100%);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            color: white;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .magnet-box h2 { font-family: var(--font-display); font-size: 32px; margin-bottom: 15px; }
+        .magnet-box ul { list-style: none; margin-top: 20px; }
+        .magnet-box li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .magnet-form {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .magnet-form input {
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 14px;
+        }
+
+        /* ── 7. КЕЙСЫ И ОТЗЫВЫ ── */
+        .cases-section { background: var(--bg-main); }
+        .case-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        .case-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .case-side {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            height: 220px;
+            position: relative;
+        }
+        .case-side img { width: 100%; height: 100%; object-fit: cover; }
+        .case-label {
+            position: absolute; bottom: 10px; left: 10px;
+            background: rgba(0,0,0,0.6); color: white; padding: 4px 10px; font-size: 12px; border-radius: 4px;
+        }
+        .case-body h3 { font-family: var(--font-display); margin-bottom: 15px; color: var(--dark-navy); }
+        .case-comment {
+            background: var(--bg-main);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin-top: 20px;
+            font-style: italic;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* ── 8. ПРОЦЕСС ЛЕЧЕНИЯ ── */
+        .process-section { background: #fff; }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .process-card {
+            position: relative;
+            background: var(--bg-main);
+            padding: 30px;
+            border-radius: var(--radius-md);
+        }
+        .process-num {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 900;
+            color: rgba(37, 99, 235, 0.15);
+            position: absolute;
+            top: 15px; right: 20px;
+        }
+        .process-card h3 { font-family: var(--font-display); font-size: 16px; margin-bottom: 10px; margin-top: 15px;}
+
+        /* ── 9. ГАРАНТИЯ КАЧЕСТВА ── */
+        .guarantee-section { background: var(--bg-main); }
+
+        /* ── 10. ДОП ЦЕННОСТИ ── */
+        .extra-section { background: #fff; }
+
+        /* ── 11. КОМАНДА ── */
+        .team-section { background: var(--bg-main); }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        .team-card {
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .team-photo {
+            height: 260px;
+            background: #e2e8f0;
+        }
+        .team-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .team-info { padding: 20px; }
+        .team-info h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 5px; }
+        .team-role { color: var(--primary); font-size: 14px; font-weight: 700; margin-bottom: 8px;}
+        .team-exp { font-size: 12px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+
+        /* ── 12. ЗАХОД НА СТОИМОСТЬ ── */
+        .price-section { background: #fff; }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .price-table tr { border-bottom: 1px solid #e2e8f0; }
+        .price-table td { padding: 18px 10px; font-size: 16px; }
+        .price-table td:last-child { text-align: right; font-weight: 700; color: var(--primary); }
+
+        /* ── 13. ФИНАЛЬНЫЙ ПРИЗЫВ ── */
+        .cta-section {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 15px;}
+        .cta-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 15px;
+        }
+        .cta-form input {
+            padding: 16px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+        }
+        .cta-form .btn { background: var(--dark-navy); color: white; padding: 0 30px; }
+        .cta-form .btn:hover { background: #000; }
+
+        /* ── 14. ОНЛАЙН-ДНЕВНИК ПАЦИЕНТА ── */
+        .diary-section { background: var(--bg-main); }
+        .diary-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .diary-features { list-style: none; margin-top: 20px; }
+        .diary-features li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+
+        /* ── 16. ПАМЯТКИ ПО УХОДУ ── */
+        .guides-section { background: #fff; }
+        .guide-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .guide-card h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 10px; }
+        .btn-link { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 14px; margin-top: 15px; display: inline-block;}
+
+        /* ── 17. ПРОГРАММА ЛОЯЛЬНОСТИ ── */
+        .loyalty-section { background: var(--bg-main); }
+
+        /* ── ПОДВАЛ ── */
+        .footer {
+            background: var(--dark-navy);
+            color: #94a3b8;
+            padding: 60px 24px 40px;
+            font-size: 14px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr repeat(2, 1fr);
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+        .footer-logo { color: white; font-family: var(--font-display); font-size: 20px; font-weight: 800; margin-bottom: 15px; }
+        .footer-col h4 { color: white; font-family: var(--font-display); margin-bottom: 15px; font-size: 14px; text-transform: uppercase; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); }
+        .footer-col a:hover { color: white; }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 1024px) {
+            .hero-inner, .magnet-box, .diary-box, .values-layout { grid-template-columns: 1fr; text-align: center; }
+            .hero-inner { justify-items: center; }
+            .hero-buttons, .hero-markers { justify-content: center; }
+            .marker-item { text-align: left; }
+            .cta-form { grid-template-columns: 1fr; }
+            .case-header { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .section { padding: 60px 16px; }
+            .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+            .btn-emergency-fixed { width: calc(100% - 32px); left: 16px; right: 16px; text-align: center; border-radius: var(--radius-md); bottom: 16px; }
+            body { padding-bottom: 60px; } /* Место под фикс. кнопку на мобилках */
+        }
+    </style>
+</head>
+<body>
+
+<!-- 15. ЭКСТРЕННАЯ КНОПКА (ФИКСИРОВАННАЯ КНОПКА ЗВОНКА ДЕЖУРНОМУ ВРАЧУ) -->
+<a href="tel:+79991234567" class="btn btn-emergency-fixed">
+    <span>📞</span> Экстренный вызов дежурного врача
+</a>
+
+<!-- ХЕДЕР -->
+<header class="fixed-header">
+    <div class="header-inner">
+        <a href="#hero" class="logo">
+            <span class="logo-text">Лапкин<span>.</span></span>
+            <div><span class="logo-sub">Ветеринарный центр</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="#about">О подходе</a>
+            <a href="#cases">Кейсы</a>
+            <a href="#team">Врачи</a>
+            <a href="#prices">Цены</a>
+            <a href="#appointment" class="btn btn-nav-cta">Записаться на приём</a>
+        </nav>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<!-- МОБИЛЬНОЕ МЕНЮ -->
+<nav class="mobile-nav" id="mobileNav">
+    <a href="#about">О подходе</a>
+    <a href="#cases">Кейсы</a>
+    <a href="#team">Врачи</a>
+    <a href="#prices">Цены</a>
+    <a href="#appointment" class="btn btn-primary" style="margin-top:20px;">Записаться</a>
+</nav>
+
+<!-- 1. ОФЕР -->
+<section class="hero" id="hero">
+    <div class="container hero-inner">
+        <div>
+            <div class="section-eyebrow" style="justify-content: flex-start;">
+                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text">Доверие с первого взгляда</span>
+            </div>
+            <h1>Здоровье вашего питомца — в надёжных руках</h1>
+            <p class="hero-sub">Круглосуточная ветеринарная помощь, диагностика и лечение на месте.</p>
+            <ul class="hero-markers">
+                <li class="marker-item"><span class="marker-icon">✔</span> Экстренный приём 24/7</li>
+                <li class="marker-item"><span class="marker-icon">✔</span> Современное оборудование и собственная лаборатория</li>
+                <li class="marker-item"><span class="marker-icon">✔</span> Лечение без боли и стресса для животного</li>
+            </ul>
+            <div class="hero-buttons">
+                <a href="#appointment" class="btn btn-primary">Записаться онлайн</a>
+                <a href="#prices" class="btn btn-secondary">Прайс-лист</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-img-box">
+                <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80" alt="Ветеринарный врач с собакой">
+            </div>
+            <div class="hero-badge">
+                <strong>Скидка 10%</strong> на первый визит
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. ПОПАДЕНИЕ В БОЛИ -->
+<section class="section pain-section">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Знакомые ситуации?</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Проблемы, с которыми сталкиваются <em>владельцы</em></h2>
+        <div class="card-grid">
+            <div class="base-card pain-card">
+                <div class="pain-icon">🚨</div>
+                <h3>«В экстренной ситуации клиника была закрыта»</h3>
+                <p class="text-muted">Большинство центров работают по графику, но питомцы болеют без расписания.</p>
+            </div>
+            <div class="base-card pain-card">
+                <div class="pain-icon">💔</div>
+                <h3>«Врач был груб или безразличен к животному»</h3>
+                <p class="text-muted">Стресс питомца удваивается, если персонал проявляет равнодушие и жесткость.</p>
+            </div>
+            <div class="base-card pain-card">
+                <div class="pain-icon">🔬</div>
+                <h3>«Пришлось возить на анализы в разные места»</h3>
+                <p class="text-muted">Потеря драгоценного времени на транспортировку между лабораториями города.</p>
+            </div>
+            <div class="base-card pain-card">
+                <div class="pain-icon">💸</div>
+                <h3>«Дорого и без каких-либо гарантий результата»</h3>
+                <p class="text-muted">Непонятные чеки в конце лечения и отсутствие прозрачности в назначениях.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. ОТЛИЧИЯ ПОДХОДА -->
+<section class="section approach-section" id="about">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Наши стандарты</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Почему выбирают <em>Лапкин</em></h2>
+        <div class="card-grid">
+            <div class="base-card approach-card">
+                <h3>Приём без очередей</h3>
+                <p class="text-muted">Строго по записи или в порядке моментальной экстренности без ожидания.</p>
+            </div>
+            <div class="base-card approach-card">
+                <h3>Все анализы на месте</h3>
+                <p class="text-muted">Собственная лаборатория выдает результаты экспресс-тестов за 15-20 минут.</p>
+            </div>
+            <div class="base-card approach-card">
+                <h3>Узкие специалисты</h3>
+                <p class="text-muted">В штате работают опытные хирурги, терапевты, стоматологи, офтальмологи.</p>
+            </div>
+            <div class="base-card approach-card">
+                <h3>Любые виды животных</h3>
+                <p class="text-muted">Профессионально лечим кошек, собак, грызунов, птиц и экзотических питомцев.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. КЛЮЧЕВЫЕ ЦЕННОСТИ -->
+<section class="section values-section">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Что для нас важно</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Наши ключевые <em>ценности</em></h2>
+        <div class="values-layout">
+            <div class="card-grid">
+                <div class="base-card">
+                    <strong>⚡ Быстрая диагностика</strong>
+                    <p class="text-muted" style="margin-top:5px;">Экономия вашего времени и спасение жизней в критических условиях.</p>
+                </div>
+                <div class="base-card">
+                    <strong>🌱 Минимальный стресс</strong>
+                    <p class="text-muted" style="margin-top:5px;">Особый протокол обращения с питомцами для их спокойствия.</p>
+                </div>
+                <div class="base-card">
+                    <strong>📋 Чёткая смета</strong>
+                    <p class="text-muted" style="margin-top:5px;">Согласовываем точную стоимость процедур строго перед началом лечения.</p>
+                </div>
+            </div>
+            <div class="value-example-box">
+                <h4>Реальный пример из практики:</h4>
+                <p>«Собаку с заворотом желудка прооперировали через 20 минут после поступления в клинику — она полностью восстановилась и вернулась домой здоровой уже через 3 дня».</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. ЛЕНТА «СЕГОДНЯ В КЛИНИКЕ» -->
+<section class="section feed-section">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Прямой эфир</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Сегодня в <em>клинике</em></h2>
+        <p class="section-sub">Делимся историями и событиями из жизни нашего центра с разрешения владельцев.</p>
+        <div class="feed-grid">
+            <div class="feed-card">
+                <div class="feed-img">
+                    <span class="feed-tag">История спасения</span>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80" alt="Кошка">
+                </div>
+                <div class="feed-content">
+                    <h3>Кот Коржик пошёл на поправку</h3>
+                    <p class="text-muted">Успешно завершили курс сложной терапии. Сняли швы, Коржик чувствует себя прекрасно и возвращается к активной жизни.</p>
+                </div>
+            </div>
+            <div class="feed-card">
+                <div class="feed-img">
+                    <span class="feed-tag">До и После</span>
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=400&q=80" alt="Собака">
+                </div>
+                <div class="feed-content">
+                    <h3>Ультразвуковая чистка зубов</h3>
+                    <p class="text-muted">Показали результат санации ротовой полости у шпица Тоби. Избавили от зубного камня и предотвратили потерю коренных зубов.</p>
+                </div>
+            </div>
+            <div class="feed-card">
+                <div class="feed-img">
+                    <span class="feed-tag">Ищем дом</span>
+                    <img src="https://images.unsplash.com/photo-1554693190-383dd5302115?auto=format&fit=crop&w=400&q=80" alt="Щенок">
+                </div>
+                <div class="feed-content">
+                    <h3>Найден щенок в Ленинском р-не</h3>
+                    <p class="text-muted">Малыш прошёл полный осмотр, абсолютно здоров и привит. Сейчас находится в нашем стационаре и очень ждет любящую семью.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. ЛИД-МАГНИТ -->
+<section class="section magnet-section">
+    <div class="container">
+        <div class="magnet-box">
+            <div>
+                <h2>Бесплатный первичный осмотр и консультация</h2>
+                <p>Специальное предложение для всех новых клиентов клиники, чтобы вы могли познакомиться с нашими врачами без лишних затрат.</p>
+                <ul>
+                    <li>✔ Взвешивание и точное измерение температуры</li>
+                    <li>✔ Профессиональная консультация по питанию и уходу</li>
+                </ul>
+            </div>
+            <form class="magnet-form">
+                <h3 style="color:var(--dark-navy); font-family:var(--font-display); font-size:16px;">Получить сертификат</h3>
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="+7 (999) 000-00-00" required>
+                <button type="submit" class="btn btn-primary" style="font-size:12px;">Активировать предложение</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- 7. КЕЙСЫ + ОТЗЫВЫ -->
+<section class="section cases-section" id="cases">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Победы над болезнями</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Истории <em>выздоровления</em></h2>
+        <div class="case-card">
+            <div class="case-header">
+                <div class="case-side">
+                    <img src="https://images.unsplash.com/photo-1535268647977-a403b69dde74?auto=format&fit=crop&w=500&q=80" alt="До лечения">
+                    <span class="case-label">До поступления</span>
+                </div>
+                <div class="case-side">
+                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=500&q=80" alt="После лечения">
+                    <span class="case-label">Спустя 2 недели</span>
+                </div>
+            </div>
+            <div class="case-body">
+                <h3>Пациент: Лабрадор Марс (4 года)</h3>
+                <p><strong>История болезни:</strong> Марс поступил с сильной вялостью, отказом от еды и подозрением на инородное тело в ЖКТ после прогулки. На месте провели цифровую рентгенографию, обнаружили плотный резиновый мяч в тонком отделе кишечника. Была проведена экстренная эндоскопическая операция.</p>
+                <div class="case-comment">
+                    <strong>Отзыв владельца:</strong> «Огромное спасибо хирургам клиники Лапкин! Скорость принятия решений просто космическая. Сразу сделали снимки, прооперировали и оставили в стационаре под наблюдением. Марс снова весел и здоров!» — Игорь В.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. ПРОЦЕСС ЛЕЧЕНИЯ -->
+<section class="section process-section">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Этапы заботы</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Как проходит <em>процесс лечения</em></h2>
+        <div class="process-grid">
+            <div class="process-card">
+                <span class="process-num">01</span>
+                <h3>Запись или экстренный визит</h3>
+                <p class="text-muted">Вы приезжаете сами при острой боли или записываетесь к назначенному времени.</p>
+            </div>
+            <div class="process-card">
+                <span class="process-num">02</span>
+                <h3>Осмотр и диагностика</h3>
+                <p class="text-muted">Врач осматривает пациента, берет экспресс-анализы и ставит точный диагноз.</p>
+            </div>
+            <div class="process-card">
+                <span class="process-num">03</span>
+                <h3>Лечение или операция</h3>
+                <p class="text-muted">Проведение необходимых процедур, терапевтических манипуляций или хирургии.</p>
+            </div>
+            <div class="process-card">
+                <span class="process-num">04</span>
+                <h3>Реабилитация и контроль</h3>
+                <p class="text-muted">Восстановление в комфортном стационаре, памятки домой и контрольные визиты.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. ПОЧЕМУ ГАРАНТИРУЕМ КАЧЕСТВО -->
+<section class="section guarantee-section">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Нам доверяют главное</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Почему мы гарантируем <em>качество</em></h2>
+        <div class="card-grid">
+            <div class="base-card">
+                <h4 style="color:var(--primary); font-family:var(--font-display); margin-bottom:10px;">Сертифицированные препараты</h4>
+                <p class="text-muted">Используем исключительно проверенную и оригинальную ветеринарную фармакологию, соблюдая все температурные условия хранения.</p>
+            </div>
+            <div class="base-card">
+                <h4 style="color:var(--primary); font-family:var(--font-display); margin-bottom:10px;">Врачи с опытом 7+ лет</h4>
+                <p class="text-muted">Наши специалисты регулярно проходят международные курсы повышения квалификации и обладают колоссальным клиническим опытом.</p>
+            </div>
+            <div class="base-card">
+                <h4 style="color:var(--primary); font-family:var(--font-display); margin-bottom:10px;">Собственный стационар</h4>
+                <p class="text-muted">Круглосуточный контроль состояния животных в послеоперационный период. Индивидуальные боксы с подогревом и вентиляцией.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 10. ДОПОЛНИТЕЛЬНЫЕ ЦЕННОСТИ -->
+<section class="section extra-section">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Комплексный уход</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Дополнительные <em>услуги</em></h2>
+        <div class="card-grid">
+            <div class="base-card">
+                <h3>Выезд врача на дом</h3>
+                <p class="text-muted">Если транспортировка вызывает у животного критический стресс, наш терапевт приедет со всем необходимым для осмотра.</p>
+            </div>
+            <div class="base-card">
+                <h3>Груминг и чистка зубов</h3>
+                <p class="text-muted">Профессиональный гигиенический уход, стрижка колтунов, бережное мытьё и ультразвуковое удаление налета без боли.</p>
+            </div>
+            <div class="base-card">
+                <h3>Чипирование и вакцинация</h3>
+                <p class="text-muted">Официальное внесение в международные базы данных, подготовка документов для выезда за границу и плановые прививки.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 11. КОМАНДА -->
+<section class="section team-section" id="team">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Эксперты клиники</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Наша <em>команда</em></h2>
+        <p class="section-sub">Профессионалы, которые искренне любят свою работу и бережно относятся к каждому пациенту.</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80" alt="Врач терапевт">
+                </div>
+                <div class="team-info">
+                    <h3>Елена Козлова</h3>
+                    <div class="team-role">Главный врач, терапевт</div>
+                    <div class="team-exp">Опыт: 12 лет</div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80" alt="Врач хирург">
+                </div>
+                <div class="team-info">
+                    <h3>Игорь Смирнов</h3>
+                    <div class="team-role">Ведущий хирург, ортопед</div>
+                    <div class="team-exp">Опыт: 15 лет</div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&w=300&q=80" alt="Врач офтальмолог">
+                </div>
+                <div class="team-info">
+                    <h3>Анна Петрова</h3>
+                    <div class="team-role">Офтальмолог, ратолог</div>
+                    <div class="team-exp">Опыт: 8 лет</div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=300&q=80" alt="Врач стоматолог">
+                </div>
+                <div class="team-info">
+                    <h3>Дмитрий Иванов</h3>
+                    <div class="team-role">Ветеринарный стоматолог</div>
+                    <div class="team-exp">Опыт: 9 лет</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 12. ЗАХОД НА СТОИМОСТЬ -->
+<section class="section price-section" id="prices">
+    <div class="container" style="max-width: 800px;">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Прозрачный прайс-лист</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Стоимость основных <em>услуг</em></h2>
+        <table class="price-table">
+            <tr>
+                <td>Первичный клинический осмотр и консультация</td>
+                <td>800 ₽</td>
+            </tr>
+            <tr>
+                <td>Комплексная вакцинация импортным препаратом</td>
+                <td>от 1 200 ₽</td>
+            </tr>
+            <tr>
+                <td>Ультразвуковое исследование (УЗИ) всех систем органов</td>
+                <td>1 500 ₽</td>
+            </tr>
+            <tr>
+                <td>Стерилизация кошки / Кастрация кота (всё включено)</td>
+                <td>от 2 500 ₽</td>
+            </tr>
+            <tr>
+                <td>Гигиеническая чистка зубов ультразвуком</td>
+                <td>2 000 ₽</td>
+            </tr>
+        </table>
+        <div style="text-align: center; margin-top: 40px;">
+            <p class="text-muted" style="margin-bottom: 20px;">Доступен точный онлайн-калькулятор всех видов операций.</p>
+            <a href="#appointment" class="btn btn-secondary">Рассчитать стоимость</a>
+        </div>
+    </div>
+</section>
+
+<!-- 13. ФИНАЛЬНЫЙ ПРИЗЫВ -->
+<section class="section cta-section" id="appointment">
+    <div class="container">
+        <h2>Запишитесь на приём прямо сейчас</h2>
+        <p>Оставьте заявку и получите гарантированную скидку 10% на первый визит в нашу клинику</p>
+        <form class="cta-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="+7 (999) 000-00-00" required>
+            <button type="submit" class="btn">Записаться</button>
+        </form>
+    </div>
+</section>
+
+<!-- 14. ОНЛАЙН-ДНЕВНИК ПАЦИЕНТА -->
+<section class="section diary-section">
+    <div class="container diary-box">
+        <div>
+            <div class="section-eyebrow" style="justify-content: flex-start;">
+                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text">Личный кабинет</span>
+            </div>
+            <h2 style="font-family:var(--font-display); font-size:28px; color:var(--dark-navy);">Онлайн-дневник здоровья пациента</h2>
+            <p class="text-muted" style="margin-top:15px;">Удобный цифровой профиль вашего домашнего любимца на нашем сайте. Вся история обращений доступна в один клик с любого устройства.</p>
+            <ul class="diary-features">
+                <li>🔹 Электронная медицинская карта и результаты всех анализов</li>
+                <li>🔹 График плановых вакцинаций и обработок от паразитов</li>
+                <li>🔹 Автоматические напоминания и пуш-уведомления на email</li>
+            </ul>
+        </div>
+        <div class="base-card" style="border: 2px dashed var(--primary); text-align: center; padding: 40px;">
+            <span style="font-size: 48px;">📱</span>
+            <h3 style="font-family:var(--font-display); margin-top:15px; margin-bottom:10px;">Вход в личный кабинет</h3>
+            <p class="text-muted" style="font-size:14px; margin-bottom:20px;">Авторизация происходит по номеру телефона, указанному в карте питомца.</p>
+            <button class="btn btn-primary" style="width: 100%; font-size:12px;">Войти в кабинет</button>
+        </div>
+    </div>
+</section>
+
+<!-- 16. ПАМЯТКИ ПО УХОДУ ЗА ПИТОМЦАМИ -->
+<section class="section guides-section">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Полезные материалы</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Памятки по уходу за <em>любимцами</em></h2>
+        <p class="section-sub">Чек-листы, статьи и экспертные PDF-руководства от ведущих терапевтов клиники. Скачайте бесплатно.</p>
+        <div class="card-grid">
+            <div class="base-card guide-card">
+                <div>
+                    <h3 style="color:var(--dark-navy);">Правильное кормление</h3>
+                    <p class="text-muted">Чек-лист по подбору оптимального рациона, нормы сухого и натурального корма для разных пород.</p>
+                </div>
+                <a href="#" class="btn-link">Скачать PDF (2.4 МБ) →</a>
+            </div>
+            <div class="base-card guide-card">
+                <div>
+                    <h3 style="color:var(--dark-navy);">Календарь прививок</h3>
+                    <p class="text-muted">Подробная памятка по обязательной вакцинации щенков и котят с первого месяца жизни.</p>
+                </div>
+                <a href="#" class="btn-link">Получить на email →</a>
+            </div>
+            <div class="base-card guide-card">
+                <div>
+                    <h3 style="color:var(--dark-navy);">Первая помощь</h3>
+                    <p class="text-muted">Что должно быть в домашней аптечке и как правильно помочь животному до приезда к ветеринару.</p>
+                </div>
+                <a href="#" class="btn-link">Скачать гайд →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 17. ПРОГРАММА ЛОЯЛЬНОСТИ ДЛЯ ВЛАДЕЛЬЦЕВ -->
+<section class="section loyalty-section">
+    <div class="container">
+        <div class="section-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Забота о постоянных клиентах</span>
+            <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="section-title">Программа <em>лояльности</em></h2>
+        <div class="card-grid">
+            <div class="base-card" style="text-align: center;">
+                <span style="font-size:32px;">🔥</span>
+                <h3 style="font-family:var(--font-display); font-size:18px; margin: 10px 0;">Постоянные скидки</h3>
+                <p class="text-muted">Накопительная система скидок на лечебные процедуры и стационар при повторных визитах в центр.</p>
+            </div>
+            <div class="base-card" style="text-align: center;">
+                <span style="font-size:32px;">🎁</span>
+                <h3 style="font-family:var(--font-display); font-size:18px; margin: 10px 0;">Бонусы за рекомендации</h3>
+                <p class="text-muted">Приводите друзей и получайте бонусные баллы на оплату гигиенических услуг и покупку корма.</p>
+            </div>
+            <div class="base-card" style="text-align: center;">
+                <span style="font-size:32px;">🩺</span>
+                <h3 style="font-family:var(--font-display); font-size:18px; margin: 10px 0;">Бесплатный осмотр</h3>
+                <p class="text-muted">Для всех участников нашей программы лояльности обязательный профилактический осмотр раз в год — бесплатно.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo">Лапкин.</div>
+            <p>Круглосуточный многопрофильный ветеринарный центр. Профессиональная забота, диагностика и терапия в любой сложной ситуации.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Информация</h4>
+            <ul>
+                <li><a href="#about">О подходе</a></li>
+                <li><a href="#cases">Кейсы</a></li>
+                <li><a href="#team">Наши врачи</a></li>
+                <li><a href="#prices">Прайс-лист</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Контакты</h4>
+            <p>📍 г. Москва, ул. Центральная, д. 12</p>
+            <p>📞 +7 (495) 000-00-00 (Многоканальный)</p>
+            <p>📧 info@lapkin-clinic.ru</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Ветеринарный центр «Лапкин». Все права защищены.</p>
+        <p style="font-size:12px; color:rgba(255,255,255,0.2);">Разработка и маркетинговая оптимизация каталога — Bot Site PRO (BSP).</p>
+    </div>
+</footer>
+
+<script>
+    // Мобильное меню (Гамбургер)
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileNav.classList.remove('open');
+        });
+    });
+
+    // Обработка отправки тестовых форм
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Спасибо за вашу заявку! Менеджер клиники свяжется с вами в течение 5 минут для подтверждения записи.');
+            form.reset();
+        });
+    });
+</script>
+</body>
+</html>
